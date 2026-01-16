@@ -1,0 +1,1407 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.21">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="講師：何明信">
+
+<title>危險性設備 – 危險性機械及設備管理</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./otherME.html" rel="next">
+<link href="./machine.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-ea1d7ac60288e0f1efdbc993fd8432ae.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-c811027903b424af1ca300273964e8c4.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css">
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="css/w3.css">
+</head>
+
+<body class="nav-sidebar docked nav-fixed slimcontent quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    </a>
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">危險性機械及設備管理</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link active" href="./index.html" aria-current="page"> 
+<span class="menu-text">介紹Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://peter7336959.github.io/EA/about.html" target="_blank"> 
+<span class="menu-text">了解我們</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./equipment.html">3.危險性設備</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+      <a href="https://peter7336959.github.io/EA/news.html" class="sidebar-logo-link">
+      <img src="./icon/info-circle.png" alt="" class="sidebar-logo light-content py-0 d-lg-inline d-none">
+      <img src="./icon/info-circle.png" alt="" class="sidebar-logo dark-content py-0 d-lg-inline d-none">
+      </a>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">1.介紹</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./machine.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">2.危險性機械</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./equipment.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">3.危險性設備</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./otherME.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">4.非危險性機械</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./review.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">5.檢定複習</span></a>
+  </div>
+</li>
+        <li class="px-0"><hr class="sidebar-divider hi "></li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">職業安全</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+ <span class="menu-text">續增中</span>
+  </li>
+      </ul>
+  </li>
+        <li class="px-0"><hr class="sidebar-divider hi "></li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">職業衛生</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+ <span class="menu-text">續增中</span>
+  </li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        
+    <div class="quarto-other-links"><h2>Other Links</h2><ul><li><a href="https://peter7336959.github.io/EA/news.html"><i class="bi bi-link-45deg"></i>職安衛新知</a></li></ul></div></div>
+<!-- main -->
+<main class="content page-columns page-full" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">危險性設備</h1>
+</div>
+
+
+<div class="quarto-title-meta-author">
+  <div class="quarto-title-meta-heading">Author</div>
+  <div class="quarto-title-meta-heading">Affiliation</div>
+  
+    <div class="quarto-title-meta-contents">
+    <p class="author">講師：何明信 <a href="mailto:he.peter70@gmail.com" class="quarto-title-author-email"><i class="bi bi-envelope"></i></a> </p>
+  </div>
+  <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            創贊
+          </p>
+      </div>
+  </div>
+
+<div class="quarto-title-meta">
+
+      
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="callout callout-style-default callout-important callout-titled" style="color: blue">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>定義？
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li><strong>危險性設備：</strong>指中央主管機關（勞動部）認定具有危險性、需進行安全檢查的設備。主要包括鍋爐、壓力容器、高壓氣體設備與容器，以及其他由中央主管機關公告指定的設備。
+<ul>
+<li>判斷標準通常依據 壓力、容量、傳熱面積、液體溫度 等技術參數。</li>
+<li>危險性設備則偏向壓力、熱能、氣體相關設施。這些設備因涉及高壓、高溫或大量氣體，若失效可能導致爆炸、火災或人員傷亡，因此必須依法進行&nbsp;<strong>型式檢查、竣工檢查、定期檢查</strong>&nbsp;等安全管理措施。</li>
+</ul></li>
+<li><strong>傳熱面積：</strong>鍋爐設備中能與熱源<strong>（火焰、煙氣、蒸汽等）</strong>接觸並進行熱交換（<strong>爐膛、煙管、水管</strong>）的有效表面積。</li>
+<li><strong>水頭壓力</strong>：指由液體柱高度所產生的壓力，10 m 水頭壓力 ≈ 1 kgf/cm²。</li>
+</ul>
+</div>
+</div>
+<ul>
+<li>根據「危險性機械及設備安全檢查規則」與相關法規，具有危險性之設備係指符合中央主管機關所定一定容量以上之設備。這些設備主要分為<strong>鍋爐</strong>、<strong>第一種壓力容器</strong>、<strong>高壓氣體特定設備</strong>及<strong>高壓氣體容器</strong>四大類，其細節與列管範圍等內容，整理如下。</li>
+<li>安全概念補充：鍋爐水在 1 kg/cm² 壓力下若結構破壞，瞬間汽化會造成約 1700 倍體積膨脹，導致爆炸、燙傷、碎片飛散等重大職業災害。</li>
+</ul>
+<div class="tabset-margin-container page-columns page-full"><div class="no-row-height column-margin column-container"><section id="鍋爐參考圖片" class="level4 striped hover mark tabset-margin-content tabset-1-1-tab-margin-content">
+<h4 class="striped hover mark anchored" data-anchor-id="鍋爐參考圖片"><strong>鍋爐參考圖片</strong></h4>
+<div class="line-block"><a href="https://www.google.com/search?sca_esv=b10a10713b465260&amp;sxsrf=ANbL-n5rS8JRzO1iYMMh6M7jSNBHcwLFHg:1768357350731&amp;udm=2&amp;fbs=ADc_l-Z6XGGbkKmpylZqg2J7ZOuVWcK7rihfmX8xtMF8_K7sjoMTuZ7o7OML4Os7pKYj9lQId0O5vGxrlF8obYHGmlYyAK8zQGo9eLOs1af8YZw6RfNobVtGUj5qNSqZ-GhGNxaopNlTsQTNgrD5la1y7KFgdyOVsU6lFpvGGXiiAjfQUOVNR231i4Rz8q02H82O-neLWFPa&amp;q=%E8%92%B8%E6%B1%BD%E9%8D%8B%E7%88%90&amp;sa=X&amp;sqi=2&amp;ved=2ahUKEwjbtee9_ImSAxXhm68BHb-mKGoQtKgLegQIDxAB&amp;biw=1192&amp;bih=728&amp;dpr=2&amp;aic=0"><strong>蒸汽鍋爐</strong></a> | <a href="https://www.google.com/search?q=%E7%86%B1%E6%B0%B4%E9%8D%8B%E7%88%90&amp;sca_esv=b10a10713b465260&amp;udm=2&amp;biw=1192&amp;bih=728&amp;aic=0&amp;sxsrf=ANbL-n4GbzF-EdQiUnqU-eAdNREwbutWpQ%3A1768357352451&amp;ei=6P1maaWfG_a_vr0P-duziAw&amp;ved=0ahUKEwils9C-_ImSAxX2n68BHfntDMEQ4dUDCBI&amp;uact=5&amp;oq=%E7%86%B1%E6%B0%B4%E9%8D%8B%E7%88%90&amp;gs_lp=Egtnd3Mtd2l6LWltZyIM54ax5rC06Y2L54iQMgUQABiABDIFEAAYgAQyBRAAGIAEMgUQABiABDIFEAAYgAQyBRAAGIAEMgQQABgeMgQQABgeMgQQABgeMgQQABgeSJkKUABYAHAAeACQAQCYAVmgAVmqAQExuAEDyAEA-AEC-AEBmAIBoAJdmAMAkgcBMaAH4wKyBwExuAddwgcDMi0xyAcDgAgA&amp;sclient=gws-wiz-img"><strong>熱水鍋爐</strong></a> |</div>
+<div class="line-block"><a href="https://www.google.com/search?q=%E7%86%B1%E5%AA%92%E9%8D%8B%E7%88%90&amp;sca_esv=b10a10713b465260&amp;udm=2&amp;biw=1192&amp;bih=728&amp;aic=0&amp;sxsrf=ANbL-n5kVX9zAN_JG86wxvTZ88jL2X6zQw%3A1768357385163&amp;ei=Cf5maeDYCYne1e8P2szx2Qw&amp;ved=0ahUKEwiggZ3O_ImSAxUJb_UHHVpmPMsQ4dUDCBI&amp;uact=5&amp;oq=%E7%86%B1%E5%AA%92%E9%8D%8B%E7%88%90&amp;gs_lp=Egtnd3Mtd2l6LWltZyIM54ax5aqS6Y2L54iQMgUQABiABDIFEAAYgAQyBRAAGIAEMgUQABiABDIFEAAYgAQyBRAAGIAEMgQQABgeMgQQABgeSImpAVDroQFY66EBcAF4AJABAJgBX6ABX6oBATG4AQPIAQD4AQL4AQGYAgKgAmfCAgYQABgHGB6YAwCIBgGSBwMxLjGgB60CsgcDMC4xuAdkwgcFMC4xLjHIBwWACAA&amp;sclient=gws-wiz-img"><strong>熱媒鍋爐</strong></a> | <a href="https://www.google.com/search?q=%E8%B2%AB%E6%B5%81%E9%8D%8B%E7%88%90&amp;sca_esv=b10a10713b465260&amp;udm=2&amp;biw=1192&amp;bih=728&amp;aic=0&amp;sxsrf=ANbL-n7_46MI8AqN1gw4gnMhz8Y2AnCLIg%3A1768357415276&amp;ei=J_5maeDMEPGWvr0Pj96QmQk&amp;ved=0ahUKEwig_Mrc_ImSAxVxi68BHQ8vJJMQ4dUDCBI&amp;uact=5&amp;oq=%E8%B2%AB%E6%B5%81%E9%8D%8B%E7%88%90&amp;gs_lp=Egtnd3Mtd2l6LWltZyIM6LKr5rWB6Y2L54iQMgUQABiABEjBBFAAWABwAHgAkAEAmAFUoAFUqgEBMbgBA8gBAPgBAvgBAZgCAaACWJgDAJIHATGgB0uyBwExuAdYwgcDMC4xyAcCgAgA&amp;sclient=gws-wiz-img"><strong>貫流鍋爐</strong></a> |</div>
+</section><section id="壓力容器參考圖片" class="level4 striped hover mark tabset-margin-content tabset-1-2-tab-margin-content collapse">
+<h4 class="striped hover mark anchored" data-anchor-id="壓力容器參考圖片"><strong>壓力容器參考圖片</strong></h4>
+<div class="line-block"><a href="https://www.google.com/search?sca_esv=f0ba455e5f96ce54&amp;sxsrf=ANbL-n4z5ry5fewveXKVA_iVLLMNhVmiJA:1768363089532&amp;udm=2&amp;fbs=ADc_l-Z6XGGbkKmpylZqg2J7ZOuVWcK7rihfmX8xtMF8_K7sjiuT3R_2YZ5E7rioBBX4p30rvH0LJ3MuG1JwfYppADfigTEHEmy6NW0Mq3dgO7jnkYUp5oWr8_w_Rz6WScJVHoW5XJS1Z-MnxKDn0C39NlwGZnQX_F7-Kro7CL3irRFrcgw_JLjjLnqhnYvpfY9hJbq1-Ywk&amp;q=%E7%AC%AC%E4%B8%80%E7%A8%AE%E5%A3%93%E5%8A%9B%E5%AE%B9%E5%99%A8&amp;sa=X&amp;sqi=2&amp;ved=2ahUKEwiMjqTukYqSAxURePUHHaEwBbAQtKgLegQIFxAB&amp;biw=1192&amp;bih=728&amp;dpr=2&amp;aic=0"><strong>第一種壓力容器</strong></a> | <a href="https://www.google.com/search?q=%E7%AC%AC%E4%BA%8C%E7%A8%AE%E5%A3%93%E5%8A%9B%E5%AE%B9%E5%99%A8&amp;sca_esv=f0ba455e5f96ce54&amp;udm=2&amp;biw=1192&amp;bih=728&amp;aic=0&amp;sxsrf=ANbL-n4JcaF5PMA8jeM6X3aLrbfrHsMO1g%3A1768363092008&amp;ei=VBRnaf0byfnV7w-yrdrwCg&amp;ved=0ahUKEwj9lbvvkYqSAxXJfPUHHbKWFq4Q4dUDCBI&amp;uact=5&amp;oq=%E7%AC%AC%E4%BA%8C%E7%A8%AE%E5%A3%93%E5%8A%9B%E5%AE%B9%E5%99%A8&amp;gs_lp=Egtnd3Mtd2l6LWltZyIV56ys5LqM56iu5aOT5Yqb5a655ZmoMgUQABiABDIFEAAYgAQyBRAAGIAEMgUQABiABDIFEAAYgAQyBRAAGIAEMgUQABiABDIFEAAYgAQyBRAAGIAEMgUQABiABEigNVDkG1i2MHAEeACQAQCYAVqgAZsDqgEBNbgBA8gBAPgBAZgCBaACyAHCAgYQABgHGB6YAwCIBgGSBwE1oAeaCLIHATK4B74BwgcFMC40LjHIBw2ACAA&amp;sclient=gws-wiz-img"><strong>第二種壓力容器</strong></a> |</div>
+<div class="line-block"><a href="https://www.google.com/search?q=%E5%B0%8F%E5%9E%8B%E5%A3%93%E5%8A%9B%E5%AE%B9%E5%99%A8&amp;sca_esv=f0ba455e5f96ce54&amp;udm=2&amp;biw=1192&amp;bih=728&amp;aic=0&amp;sxsrf=ANbL-n7j8UlwMh2veuonME_b2XAhrOY66A%3A1768363223678&amp;ei=1xRnacuTKcX21e8P6O3OOQ&amp;ved=0ahUKEwiL25-ukoqSAxVFe_UHHei2MwcQ4dUDCBI&amp;uact=5&amp;oq=%E5%B0%8F%E5%9E%8B%E5%A3%93%E5%8A%9B%E5%AE%B9%E5%99%A8&amp;gs_lp=Egtnd3Mtd2l6LWltZyIS5bCP5Z6L5aOT5Yqb5a655ZmoMgUQABiABDIFEAAYgAQyBRAAGIAEMgUQABiABDIEEAAYHkivK1DEBlj9KHABeACQAQCYAVqgAccGqgECMTG4AQPIAQD4AQGYAgSgAvYBwgIGEAAYBxgemAMAiAYBkgcBNKAH_AeyBwEzuAfxAcIHBTAuMy4xyAcJgAgA&amp;sclient=gws-wiz-img"><strong>小型壓力容器</strong></a> |<br>
+</div>
+<hr>
+</section><section id="高壓氣體特定設備參考圖片" class="level4 striped hover mark tabset-margin-content tabset-1-3-tab-margin-content collapse">
+<h4 class="striped hover mark anchored" data-anchor-id="高壓氣體特定設備參考圖片"><strong>高壓氣體特定設備參考圖片</strong></h4>
+<p><strong>高壓氣體特定設備</strong></p>
+<hr>
+</section><section id="高壓氣體特定設備參考圖片-1" class="level4 striped hover mark tabset-margin-content tabset-1-4-tab-margin-content collapse">
+<h4 class="striped hover mark anchored" data-anchor-id="高壓氣體特定設備參考圖片-1"><strong>高壓氣體特定設備參考圖片</strong></h4>
+<p><a href="https://www.google.com/search?q=%E9%AB%98%E5%A3%93%E6%B0%A3%E9%AB%94%E5%AE%B9%E5%99%A8%E6%A7%BD%E8%BB%8A&amp;sca_esv=6385978eaff74c6b&amp;udm=2&amp;biw=1241&amp;bih=728&amp;aic=0&amp;sxsrf=ANbL-n7pWgkgqFz0Dim8KapzMKuH5v1Whw%3A1768447344311&amp;ei=cF1oaazfErjK1e8Pxc2buQU&amp;ved=0ahUKEwis14vey4ySAxU4ZfUHHcXmJlcQ4dUDCBI&amp;uact=5&amp;oq=%E9%AB%98%E5%A3%93%E6%B0%A3%E9%AB%94%E5%AE%B9%E5%99%A8%E6%A7%BD%E8%BB%8A&amp;gs_lp=Egtnd3Mtd2l6LWltZyIY6auY5aOT5rCj6auU5a655Zmo5qe96LuKSMYwUJYKWPEscAR4AJABAJgBc6ABkwaqAQM3LjK4AQPIAQD4AQGYAgKgAgbCAgUQABiABMICBhAAGAcYHpgDAIgGAZIHATKgB8sDsgcAuAcAwgcDMC4yyAcFgAgA&amp;sclient=gws-wiz-img"><strong>高壓氣體容器</strong></a></p>
+<hr>
+</section></div></div><div class="panel-tabset border">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true"><strong>鍋爐</strong></a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false"><strong>第一種壓力容器</strong></a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false"><strong>高壓氣體特定設備</strong></a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-4" role="tab" aria-controls="tabset-1-4" aria-selected="false"><strong>高壓氣體容器</strong></a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-5-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-5" role="tab" aria-controls="tabset-1-5" aria-selected="false"><strong>安全運作與管理</strong></a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-6-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-6" role="tab" aria-controls="tabset-1-6" aria-selected="false"><strong>知識/技術補充</strong></a></li></ul>
+<div class="tab-content border">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<p>列管範圍包含下列各類及其附屬之過熱器與節煤器：</p>
+<ul>
+<li><strong>蒸汽鍋爐</strong>：符合下列條件之一者列管：
+<ol type="1">
+<li>最高使用壓力超過 <span class="math inline">1kg/cm^2</span>（表壓力，以下同）。</li>
+<li>傳熱面積超過 <span class="math inline">1m^2</span>。</li>
+<li>若裝有內徑 25mm 以上開放於大氣之蒸汽管，或蒸汽部裝有內徑 25mm 以上之 U 字形豎立管且水頭壓力超過 5m 者，其傳熱面積需超過 <span class="math inline">3.5m^2</span>。</li>
+<li>胴體內徑超過 300mm 且長度超過 600mm。
+<ul>
+<li>(3,4項列管條件，因為低壓但高流量蒸汽排放、大容積儲能有結構破裂風險）</li>
+</ul></li>
+</ol></li>
+<li><strong>熱水鍋爐</strong>（不含熱媒鍋爐）：符合下列條件之一且液體使用溫度超過其在大氣壓下之沸點者：
+<ul>
+<li>水頭壓力超過 10m。</li>
+<li>傳熱面積超過 <span class="math inline">8m^2</span>。</li>
+</ul></li>
+<li><strong>熱媒鍋爐</strong>：符合下列條件之一者：
+<ul>
+<li>水頭壓力超過 10m。</li>
+<li>傳熱面積超過 <span class="math inline">8m^2</span>。</li>
+</ul></li>
+<li><strong>貫流鍋爐</strong>：符合下列條件之一者：
+<ul>
+<li>最高使用壓力超過 <span class="math inline">10kg/cm^2</span>（含具有內徑超過 150mm 之圓筒形集管器，或剖面積超過 <span class="math inline">177cm^2</span> 之方形集管器者）。</li>
+<li>傳熱面積超過 <span class="math inline">10m^2</span>（含具有汽水分離器者，且其汽水分離器內徑超過 300mm 或內容積超過 <span class="math inline">0.07m^3</span> 者）。</li>
+</ul></li>
+</ul>
+<section id="列管鍋爐特性與用途比較表" class="level4 mark">
+<h4 class="mark anchored" data-anchor-id="列管鍋爐特性與用途比較表"><strong>列管鍋爐特性與用途比較表</strong></h4>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>類型</th>
+<th>熱媒/介質</th>
+<th>溫度與壓力範圍</th>
+<th>主要用途與優勢限制</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>蒸汽鍋爐</strong></td>
+<td>水 → 蒸汽</td>
+<td>約 100–250°C，中高壓（1–30 kg/cm²）</td>
+<td>製程加熱、殺菌、動力驅動（渦輪）；蒸汽可遠距輸送，適合高壓需求；但熱效率略低，需高壓設計</td>
+</tr>
+<tr class="even">
+<td><strong>熱水鍋爐</strong></td>
+<td>水</td>
+<td>約 60–95°C，低壓（&lt; 1 kg/cm²）</td>
+<td>建築暖氣、生活熱水、空調系統；結構簡單、操作安全；但溫度受限，不適用高溫製程</td>
+</tr>
+<tr class="odd">
+<td><strong>熱媒鍋爐</strong></td>
+<td>有機熱媒油</td>
+<td>約 150–350°C，低壓（&lt; 5 kg/cm²）</td>
+<td>化工、染整、定型機、聚合反應；高溫低壓、節能穩定；但熱媒需防火、定期更換</td>
+</tr>
+<tr class="even">
+<td><strong>貫流式鍋爐</strong></td>
+<td>水 → 蒸汽</td>
+<td>約 100–250°C，高壓（10–30 kg/cm²）</td>
+<td>小型製程、快速供汽、食品業；起動快、體積小；但水量少，需穩定供水與控制系統</td>
+</tr>
+</tbody>
+</table>
+<div class="line-block">補充說明</div>
+<ul>
+<li><strong>蒸汽鍋爐</strong>是最常見的工業鍋爐，適用於動力與加熱雙重用途。</li>
+<li><strong>熱水鍋爐</strong>主要用於民生與建築暖氣，安全性高但不適合高溫製程。</li>
+<li><strong>熱媒鍋爐</strong>使用有機熱媒油，能在低壓下提供高溫，適合高溫但不需蒸汽的製程。</li>
+<li><strong>貫流式鍋爐</strong>則是快速供汽型，適合空間有限或需快速起動的場域。|</li>
+<li><strong>檢查合格證有效期：</strong>經竣工檢查合格後所核發之檢查合格證，其有效期限最長為 <strong>1 年</strong>。</li>
+</ul>
+<hr>
+</section>
+
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<ul>
+<li><p>指盛裝或反應高壓流體的容器，當其壓力與容積或尺寸超過一定門檻時，必須列管並接受安全檢查。</p></li>
+<li><p>包括接受外來蒸汽、熱媒或由自身發生蒸汽以加熱固體或液體，或供化學反應、保存超過大氣壓下沸點之液體之容器。其列管標準如下：</p>
+<ul>
+<li><p>最高使用壓力超過 <span class="math inline">1kg/cm^2</span>，且內容積超過 <span class="math inline">0.2m^3</span>。</p></li>
+<li><p>最高使用壓力超過 <span class="math inline">1kg/cm^2</span>，且胴體內徑超過 500mm，長度超過 1,000mm。</p></li>
+<li><p>最高使用壓力（ <span class="math inline">kg/cm^2</span>）與內容積（<span class="math inline">m^3</span>）之<strong>積超過 0.2</strong> 者。</p></li>
+<li><p><strong>註</strong>：未達上述標準之第一種壓力容器稱為「小型壓力容器」，不列屬法定的危險性設備，但仍受安全規則規範。</p></li>
+</ul></li>
+</ul>
+<section id="壓力容器種類與列管範圍彙整表" class="level4 mark">
+<h4 class="mark anchored" data-anchor-id="壓力容器種類與列管範圍彙整表"><strong>壓力容器種類與列管範圍彙整表</strong></h4>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 17%">
+<col style="width: 44%">
+<col style="width: 37%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>種類名稱</th>
+<th>法規定義與用途範疇</th>
+<th>常見型式與設備例</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>第一種壓力容器</strong> (危險性設備)</td>
+<td><p>1. 接受外來蒸氣、熱媒或由自身發生蒸氣，藉以加熱固體或液體且壓力<strong>超過大氣壓</strong>者。</p>
+<p>2. 因化學、核子或其他反應產生蒸氣，且壓力<strong>超過大氣壓</strong>者。</p>
+<p>3. 爲分離液體成分加熱產生蒸氣，且壓力<strong>超過大氣壓</strong>者。</p>
+<p>4. 保存溫度超過其在大氣壓下沸點之液體容器。</p></td>
+<td><p><strong>型式：</strong> 圓筒型、角型、夾套型、多管型、多卷層型、塔型、板型、球型。</p>
+<p><strong>設備例：</strong> 熱交換器、蒸煮器、高壓反應鍋、蒸發器、蓄熱器、脫氣器等。</p></td>
+</tr>
+<tr class="even">
+<td><strong>第二種壓力容器</strong></td>
+<td>指內存<u><strong>氣體</strong></u>之壓力在 2kg/cm2 <strong>(0.2 MPa) 以上</strong>之容器。</td>
+<td>壓縮空氣儲槽、氣體儲槽等。</td>
+</tr>
+<tr class="odd">
+<td><strong>小型壓力容器</strong></td>
+<td>指容量未達「危險性設備」標準之<strong>第一種壓力容器</strong>。</td>
+<td>各種小型消毒器、小型熱交換器等。</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="重點管理規範補充" class="level4 mark">
+<h4 class="mark anchored" data-anchor-id="重點管理規範補充"><strong>重點管理規範補充</strong></h4>
+<p><strong>第一、二種及小型壓力容器安全管理彙整表</strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>管理項目</th>
+<th>第一種壓力容器 (危險性設備)</th>
+<th>第二種壓力容器</th>
+<th>小型壓力容器</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>操作人員資格</strong></td>
+<td>應僱用經中央主管機關認可之<strong>訓練合格或技能檢定合格人員</strong>充任。</td>
+<td>雇主應對操作勞工施以必要的安全衛生教育訓練。</td>
+<td>雇主應對操作勞工施以必要的安全衛生教育訓練。</td>
+</tr>
+<tr class="even">
+<td><strong>作業主管指派</strong></td>
+<td>同一場所設有 <strong>2 座以上</strong>者，應指派具有專門知識經驗者擔任作業主管。</td>
+<td>法無強制規定指派作業主管。</td>
+<td>法無強制規定指派作業主管。</td>
+</tr>
+<tr class="odd">
+<td><strong>定期自動檢查頻率</strong></td>
+<td><strong>每月</strong>定期實施檢查一次。</td>
+<td><strong>每年</strong>定期實施檢查一次。</td>
+<td><strong>每年</strong>定期實施檢查一次。</td>
+</tr>
+<tr class="even">
+<td><strong>定期自動檢查重點</strong></td>
+<td>本體損傷變形、蓋板螺栓、管閥洩漏、壓力表及溫度計、安全裝置、平台支架腐蝕。</td>
+<td>內外面損傷、裂痕、變形及腐蝕情形。</td>
+<td>本體損傷、蓋板螺旋、管及閥之異常。</td>
+</tr>
+<tr class="odd">
+<td><strong>外部機構檢查</strong></td>
+<td>非經檢查機構<strong>型式、熔接、構造及竣工檢查</strong>合格，不得使用。</td>
+<td>通常不屬於法定的危險性設備檢查制度管制範圍。</td>
+<td>不列屬具有危險性之設備，不受檢查制度管制。</td>
+</tr>
+<tr class="even">
+<td><strong>安全閥管理</strong></td>
+<td>調整於最高使用壓力以下吹洩。設有 2 具以上者，至少 1 具需在最高壓力下作用。</td>
+<td>應調整於最高使用壓力以下吹洩。</td>
+<td>應調整於 1kg/cm2 <strong>以下</strong>或最高使用壓力以下吹洩。</td>
+</tr>
+<tr class="odd">
+<td><strong>壓力表管理</strong></td>
+<td>刻度板應明顯標示<strong>最高使用壓力</strong>位置；最大指度為最高壓力之 1.5 至 3 倍。</td>
+<td>刻度板應明顯標示最高使用壓力位置。</td>
+<td>刻度板應明顯標示最高使用壓力位置。</td>
+</tr>
+<tr class="even">
+<td><strong>紀錄保存</strong></td>
+<td>自動檢查紀錄應保存 <strong>3 年</strong>。</td>
+<td>自動檢查紀錄應保存 <strong>3 年</strong>。</td>
+<td>自動檢查紀錄應保存 <strong>3 年</strong>。</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>檢查合格證有效期：</strong>經竣工檢查合格後所核發之檢查合格證，其有效期限最長為 <strong>1 年</strong>。</li>
+</ul>
+</section>
+
+</div>
+<div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
+<ul>
+<li><p>指供高壓氣體製造（含相關儲存）之設備及其支持構造物。列管範圍包含：</p></li>
+<li><p><strong>計算標準</strong>：容器之設計壓力（<span class="math inline">kg/cm^2</span>）與內容積（<span class="math inline">m^3</span>）之<strong>積超過 0.04</strong> 者。</p></li>
+<li><p><strong>範圍涵蓋</strong>：主要包含供進行反應、分離、精煉、蒸餾等製程之<u>塔槽類</u>（最高位至最低位正切線間長度在 <strong>5 公尺以上</strong>），或是儲存能力在 <strong>300 立方公尺以上</strong>或 <strong>3 公噸以上</strong>之<u>儲槽</u>。</p>
+<ul>
+<li><strong>排除範圍</strong>：不包括泵、壓縮機、蓄壓機、緩衝器、流量計、液面計、過濾器、空調用容器、特定壓力下（<span class="math inline">35^∘C</span> 時 <span class="math inline">≤50kg/cm^2</span>）之空氣壓縮裝置容器及高壓氣體容器。</li>
+</ul></li>
+<li><p><strong>功能：</strong></p>
+<ul>
+<li>高特主要用於工業製程中的<strong>高壓操作</strong>，例如石油產品的裂解、化學合成反應、氣體的分離與精煉等。</li>
+<li>它不單指容器本身，還包含了與製程相關的處理設備（如壓縮、液化）及支撐這些設備的構造物。</li>
+</ul></li>
+<li><p><strong>檢查合格證有效期：</strong>經竣工檢查合格後所核發之檢查合格證，其有效期限最長為 <strong>1 年</strong>。</p></li>
+</ul>
+
+</div>
+<div id="tabset-1-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-4-tab">
+<ul>
+<li><strong>定義與容量區別</strong>
+<ul>
+<li><strong>高容</strong>是指純供灌裝高壓氣體之<strong>移動式壓力容器</strong>。</li>
+<li><strong>法定容量基準</strong>：指相對於地面<strong>可移動</strong>，且其內容積在 <strong>500 公升以上</strong>之容器。
+<ul>
+<li><strong>排除範圍</strong>：不包括於未密閉狀態下使用的容器，或是溫度在 <span class="math inline">35^∘C</span> 時壓力在 <span class="math inline">50&nbsp;kg/cm^2</span> 以下之空氣壓縮裝置容器。</li>
+</ul></li>
+</ul></li>
+<li><strong>功能</strong>
+<ul>
+<li>高容主要用於高壓氣體的<strong>灌裝、運送及移動式儲存</strong>。</li>
+<li>相較於固定在廠房的地盤上，高容具備移動性（如車載型或可搬運型），方便氣體於產地與消費地之間運輸。</li>
+</ul></li>
+<li><strong>檢查合格證有效期</strong>
+<ul>
+<li><p>高壓氣體容器定期檢查合格後，其檢查合格證有效期限最長為 <strong>5 年</strong>。</p></li>
+<li><p>特別注意，<strong>固定於車輛之罐槽體</strong>於定期檢查合格後，需重新換發新證，其餘則於原證簽署。</p></li>
+</ul></li>
+</ul>
+
+</div>
+<div id="tabset-1-5" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-5-tab">
+<section id="鍋爐-1" class="level4">
+<h4 class="anchored" data-anchor-id="鍋爐-1">鍋爐</h4>
+<section id="一-鍋爐作業安全規定" class="level5 mark">
+<h5 class="mark anchored" data-anchor-id="一-鍋爐作業安全規定">一、 鍋爐作業安全規定</h5>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>類別</th>
+<th>作業安全規定項目</th>
+<th>內容摘要</th>
+<th>法規條款</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>場所設置</strong></td>
+<td><strong>安裝場所與出入口</strong></td>
+<td>應安裝於專用建築物或以障壁分隔之場所（鍋爐房），並設置兩個以上出入口（不礙避難者除外）。</td>
+<td>鍋壓則第 8、10 條</td>
+</tr>
+<tr class="even">
+<td></td>
+<td><strong>安全淨距</strong></td>
+<td>頂端與屋頂/樑應維持 <strong>1.2 公尺</strong>以上淨距；外壁與牆壁/配管等側方構造物應維持 <strong>45 公分</strong>以上。</td>
+<td>鍋壓則 第 11 條</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td><strong>燃料儲存</strong></td>
+<td>固體燃料距鍋爐外側 <strong>1.2 公尺</strong>以上；液體或氣體燃料應距 <strong>2 公尺</strong>以上。</td>
+<td>鍋壓則 第 13 條</td>
+</tr>
+<tr class="even">
+<td><strong>人員管理</strong></td>
+<td><strong>專任操作人員</strong></td>
+<td>應僱用經訓練或技能檢定合格之專任人員，運轉中不得從事無關工作。</td>
+<td>鍋壓則 第 14 條</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td><strong>作業主管</strong></td>
+<td>設有二座以上鍋爐時，應依傳熱面積合計值指派<strong>鍋爐作業主管</strong>負責指揮、監督及異常處置。</td>
+<td>鍋壓則 第 15 條</td>
+</tr>
+<tr class="even">
+<td><strong>操作規範</strong></td>
+<td><strong>運轉監視職責</strong></td>
+<td>應隨時監視壓力、水位、燃燒狀態；每日檢點水位測定裝置機能一次以上。</td>
+<td>鍋壓則 第 16 條</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td><strong>點火安全</strong></td>
+<td>點火前應確認節氣閘門開放，並經燃燒室及煙道內<strong>充分換氣</strong>後始得點火。</td>
+<td>鍋壓則 第 19 條</td>
+</tr>
+<tr class="even">
+<td></td>
+<td><strong>沖放作業</strong></td>
+<td>人工沖放時不得從事其他作業，且單人不得同時沖放二座以上鍋爐。</td>
+<td>鍋壓則 第 21 條</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td><strong>進入內部作業</strong></td>
+<td>應將鍋爐適當冷卻、實施通風換氣、使用移動電燈應有護罩（24V以下）並設置監視人員。</td>
+<td>鍋壓則 第 23 條</td>
+</tr>
+<tr class="even">
+<td><strong>安全裝置</strong></td>
+<td><strong>安全閥吹洩</strong></td>
+<td>應調整於<strong>最高使用壓力以下</strong>吹洩。二具以上者，其中一具需在最高使用壓力下，其餘可在 <strong>1.03 倍</strong>以下。</td>
+<td>鍋壓則 第 17 條</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td><strong>壓力表與標示</strong></td>
+<td>避免劇烈振動，防止內部凍結或溫度超過 <strong>80°C</strong>；刻度板應標示最高使用壓力位置。</td>
+<td>鍋壓則 第 17 條</td>
+</tr>
+<tr class="even">
+<td></td>
+<td><strong>水位計標示</strong></td>
+<td>玻璃水位計上應適當標示蒸汽鍋爐之<strong>常用水位</strong>。</td>
+<td>鍋壓則 第 17 條</td>
+</tr>
+<tr class="odd">
+<td><strong>定期檢查</strong></td>
+<td><strong>自動檢查頻率</strong></td>
+<td>雇主對鍋爐應<strong>每月</strong>定期實施檢查一次，紀錄保存三年。</td>
+<td>職業安全衛生管理辦法（以下簡稱管理辦法）第 32、80 條</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+</section>
+<section id="壓力容器" class="level4">
+<h4 class="anchored" data-anchor-id="壓力容器">壓力容器</h4>
+<section id="二-壓力容器作業安全規定" class="level5 mark">
+<h5 class="mark anchored" data-anchor-id="二-壓力容器作業安全規定">二、 壓力容器作業安全規定</h5>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>類別</th>
+<th>作業安全規定項目</th>
+<th>內容摘要</th>
+<th>法規條款</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>人員管理</strong></td>
+<td><strong>專任操作人員</strong></td>
+<td>第一種壓力容器應僱用專任操作人員（訓練或檢定合格），運轉中不得從事無關工作。</td>
+<td>鍋壓則 第 27 條</td>
+</tr>
+<tr class="even">
+<td></td>
+<td><strong>作業主管</strong></td>
+<td>設有二座以上第一種壓力容器時，應指派具有資格者擔任<strong>第一種壓力容器作業主管</strong>。</td>
+<td>鍋壓則 第 28 條</td>
+</tr>
+<tr class="odd">
+<td><strong>操作規範</strong></td>
+<td><strong>運轉監視職責</strong></td>
+<td>監視溫度、壓力運轉狀態；避免急劇負荷變動；保持安全閥、壓力表、冷卻裝置機能正常。</td>
+<td>鍋壓則 第 29 條</td>
+</tr>
+<tr class="even">
+<td></td>
+<td><strong>變更操作</strong></td>
+<td>初次使用、變更操作方法或內容物種類時，應事前告知勞工注意事項並由專人指揮。</td>
+<td>鍋壓則 第 30 條</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td><strong>進入內部作業</strong></td>
+<td>須適當冷卻、通風換氣、使用雙重絕緣電纜之移動電線、移動電燈裝設護罩、隔斷連通管路並設監視人。</td>
+<td>鍋壓則 第 32 條</td>
+</tr>
+<tr class="even">
+<td><strong>安全裝置</strong></td>
+<td><strong>安全閥設置</strong></td>
+<td>應在承受不同壓力部分裝設安全閥；調整於<strong>最高使用壓力以下</strong>吹洩；經檢查後應固定設定壓力。</td>
+<td>鍋壓則 第 31 條</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td><strong>壓力表標示</strong></td>
+<td>避免振動，防止凍結或超過 <strong>80°C</strong>；刻度板上應標示<strong>最高使用壓力</strong>位置。</td>
+<td>鍋壓則 第 31 條</td>
+</tr>
+<tr class="even">
+<td></td>
+<td><strong>破裂板（代替）</strong></td>
+<td>若內容物具強烈腐蝕性或產生沈澱物致安全閥動作受阻，得以<strong>破裂板</strong>代替。</td>
+<td>第三章 鍋附屬裝置及附屬品</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td><strong>緊急遮斷裝置</strong></td>
+<td>對於特殊化學設備，為防發生異常引起爆炸或火災，應設置緊急遮斷裝置。</td>
+<td>第一種壓力容器操作人員訓練教材</td>
+</tr>
+<tr class="even">
+<td><strong>定期檢查</strong></td>
+<td><strong>自動檢查頻率</strong></td>
+<td>雇主對第一種壓力容器應<strong>每月</strong>定期實施檢查一次，紀錄保存三年。</td>
+<td>管理辦法 第 33、80 條</td>
+</tr>
+</tbody>
+</table>
+<p>鍋爐與壓力容器共同補充說明：</p>
+<p>1. <strong>定期檢查紀錄</strong>：無論是鍋爐或壓力容器，雇主應記錄檢查年月日、方法、部分、結果及改善措施，並<strong>保存三年</strong>。</p>
+<p>2. <strong>異常處置</strong>：操作人員或作業主管發現有異狀或對勞工有危害之虞時，應即報告上級並採取必要之措施（如立即檢修）。</p>
+<p>3. <strong>安全閥代換</strong>：在特定化學物質或內容物易結塊堵塞安全閥時，可依規定以<strong>破裂板</strong>作為防止過壓之安全裝置。</p>
+<hr>
+</section>
+</section>
+<section id="高特" class="level4">
+<h4 class="anchored" data-anchor-id="高特">高特</h4>
+<section id="三高壓氣體特定設備" class="level5 mark">
+<h5 class="mark anchored" data-anchor-id="三高壓氣體特定設備">三、高壓氣體特定設備</h5>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>類別</th>
+<th>作業安全 / 安全裝置項目</th>
+<th>相關規定內容摘要</th>
+<th>法規條款</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>人員管理</strong></td>
+<td><strong>安全管理人員設置</strong></td>
+<td>應依製造種類與規模選任<strong>高壓氣體製造安全主任</strong>及<strong>作業主管</strong>，負責監督維持設備符合法令基準、指揮勞工作業及異常處置。</td>
+<td>高壓氣體勞工安全規則（以下簡稱高壓則）第 220, 221, 224 條</td>
+</tr>
+<tr class="even">
+<td></td>
+<td><strong>操作人員資格</strong></td>
+<td>雇主應僱用經訓練或技能檢定合格之專任操作人員，並施予安全知識教育訓練。</td>
+<td>高壓則 第 239 條、職安法 第 24 條</td>
+</tr>
+<tr class="odd">
+<td><strong>安全裝置</strong></td>
+<td><strong>壓力表與安全閥</strong></td>
+<td>應設置適當壓力表，並裝設能使壓力恢復至最高使用壓力以下之<strong>安全閥或破裂板</strong>。</td>
+<td>高壓則 第 48, 49 條</td>
+</tr>
+<tr class="even">
+<td></td>
+<td><strong>液面計設施</strong></td>
+<td>液化氣體儲槽應裝設液面計；若為玻璃管液面計應有防破損措施，並於連接處設置自動及手動式停止閥。</td>
+<td>高壓則 第 51 條</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td><strong>緊急遮斷裝置</strong></td>
+<td>內容積 5,000 公升以上之液化氣體儲槽配管，應於距離儲槽外側 5 公尺以上處設置可操作之緊急遮斷裝置。</td>
+<td>高壓則 第 53 條</td>
+</tr>
+<tr class="even">
+<td></td>
+<td><strong>漏洩檢知警報</strong></td>
+<td>可燃性或毒性氣體製造設備中，易積滯氣體之場所應設可探測漏洩並自動發報之設備。</td>
+<td>高壓則 第 60, 167 條</td>
+</tr>
+<tr class="odd">
+<td><strong>作業規範</strong></td>
+<td><strong>日常與定期檢點</strong></td>
+<td>應於使用開始前、終了後及運轉中實施檢點（如壓力、溫度、有無洩漏等），每月至少實施一次自動檢查。</td>
+<td>高壓則 第 240 條、職業安全衛生管理辦法（以下簡稱管理辦法）第 33, 61 條</td>
+</tr>
+<tr class="even">
+<td></td>
+<td><strong>維修與修理作業</strong></td>
+<td>修理、清掃前應以惰性氣體置換內部，作業時應關閉前後閥並設置盲板，掛「禁止操作」標示。</td>
+<td>高壓則 第 75 條</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td><strong>儲槽沉陷測定</strong></td>
+<td>儲存能力在 100 立方公尺或 1 公噸以上之儲槽，應<strong>每年</strong>定期測定其沉陷狀況一次。</td>
+<td>管理辦法 第 37 條</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="高容" class="level4">
+<h4 class="anchored" data-anchor-id="高容">高容</h4>
+<section id="四高壓氣體容器" class="level5 mark">
+<h5 class="mark anchored" data-anchor-id="四高壓氣體容器">四、高壓氣體容器</h5>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>類別</th>
+<th>作業安全 / 安全裝置項目</th>
+<th>相關規定內容摘要</th>
+<th>法規條款</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>儲存管理</strong></td>
+<td><strong>環境與溫度控制</strong></td>
+<td>容器應放置於通風良好場處，經常保持溫度於 <strong>40°C 以下</strong>。</td>
+<td>高壓則 第 116 條、設施規則 第 109 條</td>
+</tr>
+<tr class="even">
+<td></td>
+<td><strong>存放穩定性</strong></td>
+<td>容器不論盛裝或空瓶應安穩置放、<strong>加固定</strong>（防止翻倒）並裝妥護蓋。</td>
+<td>高壓則 第 116 條、設施規則 第 108 條</td>
+</tr>
+<tr class="odd">
+<td><strong>灌裝作業</strong></td>
+<td><strong>灌裝前檢查</strong></td>
+<td>灌裝前應對容器實施音響檢查，若有異音應實施內部檢查，發現腐蝕或異物時不得使用。</td>
+<td>高壓則 第 71 條</td>
+</tr>
+<tr class="even">
+<td></td>
+<td><strong>防滑措施</strong></td>
+<td>對於固定在車輛上之內容積 5,000 公升以上容器灌裝或抽出時，車輛應設置適當<strong>輪擋</strong>並固定。</td>
+<td>高壓則 第 71 條</td>
+</tr>
+<tr class="odd">
+<td><strong>安全裝置</strong></td>
+<td><strong>閥與附屬品保護</strong></td>
+<td>灌氣容器應採取防止因翻倒、掉落引起衝擊而損傷閥之措施。</td>
+<td>高壓則 第 79, 131 條</td>
+</tr>
+<tr class="even">
+<td></td>
+<td><strong>運輸安全配備</strong></td>
+<td>固定於車輛運輸之容器，應設安全閥、壓力表、溫度計及防止液面搖動之<strong>防波板</strong>。</td>
+<td>高壓則 第 124, 125, 126 條</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td><strong>特定氣體標示</strong></td>
+<td>工業用以外之液化石油氣應添加臭劑；工業用者應張貼「未添加臭劑」貼籤。</td>
+<td>高壓則 第 74 條</td>
+</tr>
+<tr class="even">
+<td><strong>作業維護</strong></td>
+<td><strong>作業檢點</strong></td>
+<td>雇主應使勞工於灌裝、儲存、運輸或廢棄作業前實施檢點，並每月定期檢查一次。</td>
+<td>管理辦法 第 33, 65 條</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td><strong>運輸前檢查</strong></td>
+<td>於運輸開始或終止時，應檢點有無漏氣等異常，發現異常應即整修。</td>
+<td>高壓則 第 134 條</td>
+</tr>
+</tbody>
+</table>
+<p>高特與高容共同核心規定：</p>
+<p>1. <strong>禁火與標示</strong>：兩者之儲存及製造場所周圍應有明確警戒線與「嚴禁煙火」標示。</p>
+<p>2. <strong>變更檢查</strong>：設備修改致本體構造（如胴體、端板、補強支撐等）變動時，必須向檢查機構申請變更檢查。</p>
+<p>3. <strong>紀錄保存</strong>：所有自動檢查與檢點之紀錄應詳細確實，並<strong>保存三年</strong>備查。</p>
+<hr>
+</section>
+</section>
+</div>
+<div id="tabset-1-6" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-6-tab">
+<section id="理想氣體定律" class="level5">
+<h5 class="anchored" data-anchor-id="理想氣體定律"><strong>理想氣體定律</strong></h5>
+<ul>
+<li>理想氣體定律（PV=nRT）假設氣體分子間無引力且不佔體積，這在高溫、低壓的狀況下較為接近現實，被廣泛用於初步的壓力換算與行政管理界定。<sup><u>（細節可自行上網學習）</u></sup></li>
+</ul>
+</section>
+<section id="高壓氣體的法定定義與換算" class="level5">
+<h5 class="anchored" data-anchor-id="高壓氣體的法定定義與換算">1. <strong>高壓氣體的法定定義與換算</strong></h5>
+<ul>
+<li><p>根據《高壓氣體勞工安全規則》，高壓氣體的判定基準通常以「常用溫度」下的壓力或「攝氏 35 度」時可達到的壓力為準,。</p></li>
+<li><p><strong>壓力換算應用</strong>：在行政管理上，常運用波義耳-查理定律（Boyle-Charles Law）將氣體在當前溫度下的壓力，換算為攝氏 35 度時的狀態,。例如，某氣體在 0∘C 時壓力為 <span class="math inline">9&nbsp;kg/cm^2</span>，透過理想氣體定律換算，其在 35∘C 時壓力會達到 <span class="math inline">10.286&nbsp;kg/cm^2</span>，依規即屬「高壓氣體」。</p></li>
+<li><p>但，真實氣體具有<strong>臨界溫度（</strong>Tc​<strong>）與臨界壓力（</strong>Pc​<strong>）</strong>。當溫度低於臨界溫度時，氣體可經由加壓液化。這影響了高壓設備的分類（壓縮氣體設備 vs.&nbsp;液化氣體設備）以及儲槽的降溫措施。</p>
+<ul>
+<li><strong>非理想氣體</strong>：在高壓或低溫下，分子間作用力與分子體積不可忽略，需改用&nbsp;<strong>范德瓦耳斯方程式</strong>&nbsp;或其他實驗方程。如水蒸氣、二氧化碳在接近液化條件下，理想氣體定律不再準確。</li>
+</ul></li>
+</ul>
+</section>
+<section id="絕熱壓縮引發的火災爆炸風險" class="level5">
+<h5 class="anchored" data-anchor-id="絕熱壓縮引發的火災爆炸風險">2. <strong>絕熱壓縮引發的火災爆炸風險</strong></h5>
+<ul>
+<li><p>當高壓氣體（尤其是氧氣）快速進入閥門或配管時，會產生<u><strong>絕熱壓縮（Adiabatic Compression）現象</strong></u>，導致溫度瞬間飆升。</p></li>
+<li><p>若設備內存有可燃物或潤滑油，極易引發著火或爆炸。因此，安全管理規定開啟容器閥門時應「輕緩」，且嚴禁油脂類物質接觸氧氣設備。</p></li>
+</ul>
+</section>
+<section id="過壓預防與釋壓裝置設置" class="level5">
+<h5 class="anchored" data-anchor-id="過壓預防與釋壓裝置設置">3. <strong>過壓預防與釋壓裝置設置</strong></h5>
+<ul>
+<li><p><strong>安全閥與破裂板</strong>：必須依據氣體的噴出量、常用壓力與設計壓力設置自動釋壓裝置。</p></li>
+<li><p><strong>釋放管位置</strong>：可燃性或毒性氣體的釋放管開口必須導向安全位置（如距地面 5 公尺以上或進入除毒設備），以防二次災害。</p></li>
+</ul>
+</section>
+</div>
+</div>
+</div>
+
+
+
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./machine.html" class="pagination-link" aria-label="2.危險性機械">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">2.危險性機械</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./otherME.html" class="pagination-link" aria-label="4.非危險性機械\設備">
+        <span class="nav-page-text">4.非危險性機械</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>Copyright 2026, 何明信</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+<script src="site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>

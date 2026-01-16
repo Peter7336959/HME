@@ -1,0 +1,1395 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.25">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="何明信">
+
+<title>0112CH4 漸近理論與非貝氏方法的連結 – 危險性機械及設備管理</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-bcc2b4e864fb2217c649f7e1f6d25d6b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css">
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="css/w3.css">
+</head>
+
+<body class="nav-sidebar docked nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    </a>
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">危險性機械及設備管理</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link active" href="./index.html" aria-current="page"> 
+<span class="menu-text">介紹Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://peter7336959.github.io/EA/about.html" target="_blank"> 
+<span class="menu-text">了解我們</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">0112CH4 漸近理論與非貝氏方法的連結</li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+      <a href="https://peter7336959.github.io/EA/news.html" class="sidebar-logo-link">
+      <img src="./icon/info-circle.png" alt="" class="sidebar-logo light-content py-0 d-lg-inline d-none">
+      <img src="./icon/info-circle.png" alt="" class="sidebar-logo dark-content py-0 d-lg-inline d-none">
+      </a>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">介紹</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">基本概念</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+ <span class="menu-text">1.AAA</span>
+  </li>
+          <li class="sidebar-item">
+ <span class="menu-text">5.持續新增</span>
+  </li>
+      </ul>
+  </li>
+        <li class="px-0"><hr class="sidebar-divider hi "></li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">職業安全</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+ <span class="menu-text">續增中</span>
+  </li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">職業衛生</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+ <span class="menu-text">續增中</span>
+  </li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="2">
+    <h2 id="toc-title">Contents</h2>
+   
+  <ul>
+  <li><a href="#事後分佈的常態近似" id="toc-事後分佈的常態近似" class="nav-link active" data-scroll-target="#事後分佈的常態近似">4.1 事後分佈的常態近似</a></li>
+  <li><a href="#大樣本理論-large-sample-theory" id="toc-大樣本理論-large-sample-theory" class="nav-link" data-scroll-target="#大樣本理論-large-sample-theory">4.2 大樣本理論 (Large-sample theory)</a></li>
+  <li><a href="#定理的反例" id="toc-定理的反例" class="nav-link" data-scroll-target="#定理的反例">4.3 定理的反例</a></li>
+  <li><a href="#貝氏推論的頻率學派評估" id="toc-貝氏推論的頻率學派評估" class="nav-link" data-scroll-target="#貝氏推論的頻率學派評估">4.4 貝氏推論的頻率學派評估</a></li>
+  <li><a href="#其他統計方法的貝氏詮釋" id="toc-其他統計方法的貝氏詮釋" class="nav-link" data-scroll-target="#其他統計方法的貝氏詮釋">4.5 <strong>其他統計方法的貝氏詮釋</strong></a>
+  <ul class="collapse">
+  <li><a href="#範例wilcoxon-rank-test-的貝氏詮釋" id="toc-範例wilcoxon-rank-test-的貝氏詮釋" class="nav-link" data-scroll-target="#範例wilcoxon-rank-test-的貝氏詮釋">4.6 範例：Wilcoxon Rank Test 的貝氏詮釋</a></li>
+  </ul></li>
+  </ul>
+<div class="quarto-other-links"><h2>Other Links</h2><ul><li><a href="https://peter7336959.github.io/EA/news.html"><i class="bi bi-link-45deg"></i>職安衛新知</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">0112CH4 漸近理論與非貝氏方法的連結</h1>
+</div>
+
+
+<div class="quarto-title-meta-author">
+  <div class="quarto-title-meta-heading">Author</div>
+  <div class="quarto-title-meta-heading">Affiliation</div>
+  
+    <div class="quarto-title-meta-contents">
+    <p class="author">何明信 <a href="mailto:he.peter70@gmail.com" class="quarto-title-author-email"><i class="bi bi-envelope"></i></a> </p>
+  </div>
+  <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            創贊
+          </p>
+      </div>
+  </div>
+
+<div class="quarto-title-meta">
+
+      
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>Asymptotics and connections to non-Bayesian approaches</p>
+<ul>
+<li><p>許多基於無資訊先驗分佈的簡單貝葉斯分析與標準非貝葉斯方法的結果相似。</p></li>
+<li><p>無資訊先驗分佈作為客觀假設的合理性取決於數據中可用資訊的數量：在第2章和第3章的簡單情況下，很明顯，隨著樣本量n的增加，先驗分佈對後驗推斷的影響會減少。這些思維有時被稱為<strong>漸近理論</strong>，因為它們涉及當n趨於無窮大時所成立的性質。本章將回顧這些漸近理論，並更明確地討論貝葉斯方法和非貝葉斯方法之間的關聯。</p></li>
+<li><p>大樣本結果其實並非進行貝葉斯資料分析的必要條件，但通常可用作近似值和理解工具。</p></li>
+<li><p>本章核心觀念：<strong>當數據量變大時，貝氏統計會發生什麼事？</strong></p></li>
+</ul>
+<hr>
+<section id="事後分佈的常態近似" class="level2">
+<h2 class="anchored" data-anchor-id="事後分佈的常態近似">4.1 事後分佈的常態近似</h2>
+<div class="tabset-margin-container"></div><div class="panel-tabset border">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">1. 核心觀念</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">2. 數學意義？</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false" href="">3. 職業衛生EA案例</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-4" role="tab" aria-controls="tabset-1-4" aria-selected="false" href="">4. 留意陷阱</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-5-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-5" role="tab" aria-controls="tabset-1-5" aria-selected="false" href="">5.OHS實務</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-6-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-6" role="tab" aria-controls="tabset-1-6" aria-selected="false" href="">6. 職業衛生EA應用</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-7-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-7" role="tab" aria-controls="tabset-1-7" aria-selected="false" href="">7. 小結</a></li></ul>
+<div class="tab-content border">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<ul>
+<li><p>當樣本數 (<span class="math inline">n</span>) 足夠大時，事後分佈 <span class="math inline">p(\theta|y)</span> 會趨近於一個常態分佈（Normal Distribution），其中心點位於後驗眾數（Posterior Mode），變異數則由該點的曲率（Curvature）決定。</p></li>
+<li><p>在職業衛生中，我們常說「數據會說話」。當你收集的暴露監測數據夠多時，數據的聲音會大過你原本的主觀判斷（先驗分佈 Prior），而且這時我們對真實風險的不確定性，會呈現一個漂亮的「鐘形曲線」。</p></li>
+<li><p><strong>不管你原本信什麼：</strong> 除非你的先驗極端到認為某件事「絕對不可能發生」（機率為 0），否則隨著監測數據增加，事後分佈都會收斂到同一個結果。</p></li>
+<li><p><strong>計算變簡單：</strong> 因為它變成了常態分佈，我們就不需要跑複雜的模擬（如 MCMC），只要算出「平均值」和「標準差」，就能快速掌握風險範圍。</p></li>
+</ul>
+<hr>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<ul>
+<li><p>泰勒展開式（Taylor series expansion）與二次近似（Quadratic approximation）？</p></li>
+<li><p>假設我們在評估某化學工廠的「苯」暴露濃度平均值（這是參數 <span class="math inline">\theta</span>）。</p></li>
+</ul>
+<ol type="1">
+<li><p><strong>眾數</strong> <span class="math inline">\hat{\theta}</span> (The Mode)</p>
+<ul>
+<li><p>這是事後分佈機率最高點，代表在考慮了現有數據後，<strong>最有可能的真實暴露濃度</strong>。</p></li>
+<li><p>在大樣本下，這通常非常接近傳統統計（頻率學派）算出的最大概似估計值（MLE）。</p></li>
+</ul></li>
+<li><p><strong>觀測資訊量</strong> <span class="math inline">I(\hat{\theta})</span> (Observed Information)</p>
+<ul>
+<li><p><strong>陡峭的鐘形：</strong> 代表數據非常一致且充足，我們對這個評估結果<strong>非常有信心</strong>，變異數（不確定性）很小。</p></li>
+<li><p><strong>扁平的鐘形：</strong> 代表數據雖然指出了方向，但我們還是不太確定，變異數（不確定性）很大。</p></li>
+</ul></li>
+<li><p>近似公式的實務意義</p>
+<p>書中公式：<span class="math inline">p(\theta|y) \approx N(\hat{\theta}, [I(\hat{\theta})]^{-1})</span></p>
+<ul>
+<li><p>真實暴露濃度的分佈 <span class="math inline">\approx</span> 常態分佈（中心點在最可能的值，<strong>寬度是資訊量的倒數</strong>）。</p></li>
+<li><p><strong>應用：</strong> 這意味著在數據量大時，我們可以用簡單的加減乘除（像算信賴區間那樣）來報告貝氏結果，這對向工廠管理層解釋非常方便。</p></li>
+</ul></li>
+</ol>
+<hr>
+</div>
+<div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
+<ul>
+<li><p><strong>情境：</strong> 你在監測一個高風險的焊接作業區，想知道「錳」的幾何平均濃度 (GM)。</p></li>
+<li><p><strong>狀況 A：小樣本 (n=3)</strong></p>
+<ul>
+<li>這是我們最常遇到的情況。這時 <strong>4.1 節的理論通常不適用</strong>。事後分佈可能歪七扭八（偏態），或是受你選的先驗（Prior）影響很大。如果你這時硬套用常態近似，可能會嚴重低估高暴露的風險，導致工人失去保護。</li>
+</ul></li>
+<li><p><strong>狀況 B：大數據/連續監測 (n=1000)</strong></p>
+<ul>
+<li><p>現在很多工廠裝設了即時感測器 (Real-time sensors)，數據量極大。</p></li>
+<li><p>此時無論你一開始覺得這工廠乾淨或髒，事後分佈都會變成一個很窄的常態分佈。</p></li>
+<li><p>這告訴我們，當我們擁有大數據時，貝氏統計與傳統統計（如 t-test）的結果會幾乎一樣。貝氏的優勢在於<strong>解釋力</strong>（我們可以直說：「真實濃度有 95% 機率落在這裡」），而不在於數值上的巨大差異。</p></li>
+</ul></li>
+</ul>
+<hr>
+</div>
+<div id="tabset-1-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-4-tab">
+<ol type="1">
+<li><p><strong>參數邊界問題 (Edge Cases)：</strong></p>
+<ul>
+<li><p>暴露濃度不可能為負值。常態分佈是對稱的，左尾巴會延伸到負無限大。</p></li>
+<li><p>如果你評估的物質濃度很低（接近 0 ppm），使用「常態近似」可能會算出「95% 信賴區間下限是 -0.5 ppm」這種荒謬結果。</p></li>
+<li><p><strong>解決方案：</strong> 這也是為什麼我們在職業衛生中，習慣對數據取 <strong>Log (對數)</strong> 後再分析。在 Log 尺度上的常態近似（即 Lognormal），更符合物理現實。</p></li>
+</ul></li>
+<li><p><strong>尾端風險 (Tail Risk) 被低估：</strong></p>
+<ul>
+<li><p>ＥＡ往往關注的是<strong>極端值</strong>（例如：95th percentile 暴露是否超過 OEL）。</p></li>
+<li><p>常態近似在「中心」很準，但在「尾巴」可能不準。如果真實分佈稍微有一點厚尾（Heavy tail），常態近似會讓你誤以為發生極端高暴露的機率很低。</p></li>
+</ul></li>
+<li><p>區分評估目標：常態近似理論於職業衛生數據（通常經 Log 轉換）時，</p>
+<ul>
+<li><p><strong>如果你要算 GM (中位數趨勢)：</strong></p>
+<ul>
+<li><p><span class="math inline">\text{GM} = \exp(\hat{\mu}_{\log})</span></p></li>
+<li><p>可以直接使用 <span class="math inline">\exp</span> 轉換，且估計結果與變異數無關（獨立）。</p></li>
+</ul></li>
+<li><p><strong>如果你要算 AM (長期暴露風險/總劑量)：</strong></p>
+<ul>
+<li><p><span class="math inline">\text{AM} = \exp(\hat{\mu}_{\log} + 0.5\hat{\sigma}_{\log}^2)</span></p></li>
+<li><p><strong>警告：</strong> 不能只用 <span class="math inline">\exp(\hat{\mu}_{\log})</span> 當作平均濃度，那樣會<strong>嚴重低估</strong>工人的真實暴露風險！</p></li>
+<li><p><strong>進階：</strong> 在這種情況下，雖然參數 <span class="math inline">\mu</span> 和 <span class="math inline">\sigma</span> 在數學上是獨立的，但在計算 AM 時，它們會「糾纏」在一起。這也是為什麼在小樣本下推估 AM 特別困難，通常建議使用完整的貝氏 MCMC 方法（如 Expostats 軟體），而非僅依賴簡單的近似公式。</p></li>
+</ul></li>
+</ul></li>
+</ol>
+<hr>
+</div>
+<div id="tabset-1-5" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-5-tab">
+<ul>
+<li><strong>未知平均值與變異數的常態分佈：</strong>在職業衛生暴露評估中，我們面對化學品濃度數據（經對數轉換後通常呈現常態分佈），我們<strong>幾乎永遠</strong>都不知道兩個最重要的參數：</li>
+</ul>
+<ol type="1">
+<li><p><span class="math inline">\mu</span> ：真實的平均暴露濃度（這決定了工人的長期健康風險）。</p></li>
+<li><p><span class="math inline">\sigma</span> ：製程的變異程度（這決定了忽高忽低的風險，也就是幾何標準差 GSD 的概念）。</p></li>
+</ol>
+<ul>
+<li>以下展示如何在大樣本下，用簡單的正態近似來同時推估這兩個傢伙。</li>
+</ul>
+<section id="參數的轉換" class="level4">
+<h4 class="anchored" data-anchor-id="參數的轉換">1. 參數的轉換</h4>
+<ul>
+<li><p><strong>問題：</strong> 標準差 <span class="math inline">\sigma</span> 必須是正數（<span class="math inline">\sigma &gt; 0</span>）。如果我们直接用常態分佈來近似 <span class="math inline">\sigma</span>，常態分佈的左邊尾巴會延伸到負數，這不符合物理現實。</p></li>
+<li><p><strong>解法：</strong> 我們改為估計 <span class="math inline">(\mu, \log \sigma)</span>。</p>
+<ul>
+<li><p><span class="math inline">\mu</span> 可以是負的（例如 0.01 ppm 取 log 後是負數）。</p></li>
+<li><p><span class="math inline">\log \sigma</span> 也可以是負的（當 <span class="math inline">\sigma &lt; 1</span> 時）。</p></li>
+<li><p>這樣我們就把參數的範圍拉開到全體實數軸 <span class="math inline">(-\infty, \infty)</span>，常態近似的效果會好非常多。</p></li>
+</ul></li>
+</ul>
+</section>
+<section id="數學核心資訊矩陣-the-information-matrix" class="level4">
+<h4 class="anchored" data-anchor-id="數學核心資訊矩陣-the-information-matrix">2. 數學核心：資訊矩陣 (The Information Matrix)</h4>
+<ul>
+<li><p><strong>觀察資訊矩陣 (Observed Information Matrix,</strong> <span class="math inline">I(\theta)</span>)。這是一個 <span class="math inline">2 \times 2</span> 的矩陣，因為我們有兩個參數。</p>
+<ul>
+<li><span class="math inline">I(\theta) = - \frac{d^2}{d\theta^2} \log p(\theta|y)</span></li>
+</ul></li>
+<li><p>經過推導，在 <span class="math inline">\hat{\theta}</span>（最大概似估計值，也就是樣本平均數 <span class="math inline">\bar{y}</span> 和樣本標準差 <span class="math inline">s</span>）這一點，矩陣是對角化的：</p>
+<ul>
+<li><span class="math inline">I(\hat{\theta}) = n \begin{pmatrix} \frac{1}{s^2} &amp; 0 \\ 0 &amp; 2 \end{pmatrix}</span></li>
+</ul></li>
+<li><p><strong>這告訴我們兩件驚人的事（職安衛重點）：</strong></p></li>
+</ul>
+<ol type="1">
+<li><p>對角線外是 0 (Independence)：</p>
+<ul>
+<li><p>這表示在大樣本下，我們對「平均值 <span class="math inline">\mu</span>」的估計，跟對「變異程度 <span class="math inline">\sigma</span>」的估計，彼此是獨立的 (asymptotically independent)。</p>
+<ul>
+<li><em>實務意義：</em> 你算出的平均暴露濃度準不準，不會受到你對變異數估計準不準的干擾。我們可以分開來看這兩個風險指標。</li>
+</ul></li>
+</ul></li>
+<li><p>矩陣的反矩陣 (Inverse)：</p>
+<ul>
+<li><p>資訊矩陣的「倒數」就是事後分佈的「變異數」。</p>
+<p><span class="math inline">Var(\hat{\theta}) = [I(\hat{\theta})]^{-1} = \frac{1}{n} \begin{pmatrix} s^2 &amp; 0 \\ 0 &amp; \frac{1}{2} \end{pmatrix}</span></p></li>
+</ul></li>
+</ol>
+</section>
+<section id="最終結果" class="level4">
+<h4 class="anchored" data-anchor-id="最終結果">3. 最終結果</h4>
+<ul>
+<li>依據上述矩陣，我們可以寫出兩個參數的近似分佈：</li>
+</ul>
+<section id="平均值的近似分佈" class="level5">
+<h5 class="anchored" data-anchor-id="平均值的近似分佈">(1) 平均值的近似分佈</h5>
+<p><span class="math inline">\mu|y \approx N(\bar{y}, s^2/n)</span></p>
+<ul>
+<li><p>真實平均值 <span class="math inline">\mu</span> 的分佈，中心在樣本平均數 <span class="math inline">\bar{y}</span>，標準差是 <span class="math inline">s/\sqrt{n}</span>。</p></li>
+<li><p><strong>職業衛生應用：</strong> 這就是我們熟悉的標準誤 (Standard Error)。這告訴我們，樣本越多 (<span class="math inline">n</span> 大)，我們對平均暴露濃度的估計就越精準（鐘形越窄）。</p></li>
+</ul>
+</section>
+<section id="變異數對數尺度的近似分佈" class="level5">
+<h5 class="anchored" data-anchor-id="變異數對數尺度的近似分佈">(2) 變異數（對數尺度）的近似分佈</h5>
+<p><span class="math inline">\log \sigma|y \approx N(\log s, 1/2n)</span></p>
+<ul>
+<li><p>真實變異程度的對數 (<span class="math inline">\log \sigma</span>)，中心在 <span class="math inline">\log s</span>，變異數是 <span class="math inline">1/2n</span>。</p></li>
+<li><p><strong>職業衛生應用：</strong> 這公式告訴我們，<strong>要準確估計 GSD（變異程度），比估計平均值更難！</strong> 注意那個係數，變異程度的不確定性主要只跟樣本數 <span class="math inline">n</span> 有關。樣本數如果不夠大，你的 GSD 估計值會非常不可靠。</p></li>
+</ul>
+<hr>
+</section>
+</section>
+</div>
+<div id="tabset-1-6" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-6-tab">
+<ul>
+<li><p>情境：你在評估一家噴漆廠的甲苯暴露。你採集了 <span class="math inline">n=50</span> 個樣本（屬於大樣本，適用本節理論）。</p></li>
+<li><p>數據經過 Log 轉換後：</p>
+<ul>
+<li><p>樣本平均數 <span class="math inline">\bar{y} = 3.0</span> (對應幾何平均 GM <span class="math inline">\approx 20</span> ppm)</p></li>
+<li><p>樣本標準差 <span class="math inline">s = 1.0</span> (對應幾何標準差 GSD <span class="math inline">\approx 2.7</span>，屬於高變異作業)</p></li>
+</ul></li>
+<li><p>平均濃度的不確定性：</p>
+<ul>
+<li>我們對 <span class="math inline">\mu</span> 的信心區間寬度取決於 <span class="math inline">s/\sqrt{50} = 1/7.07 \approx 0.14</span>。這很小，表示我們很確定平均濃度就在 3.0 附近。</li>
+</ul></li>
+<li><p>變異程度的不確定性：</p>
+<p>我們對 <span class="math inline">\log \sigma</span> 的信心區間寬度取決於 <span class="math inline">\sqrt{1/(2 \times 50)} = \sqrt{0.01} = 0.1</span>。</p></li>
+<li><p>在職業衛生中，我們最怕的是 95th percentile (P95) 超標。</p>
+<ul>
+<li>P95 的公式通常是：<span class="math inline">\mu + 1.645 \sigma</span>。</li>
+</ul></li>
+<li><p>這個範例告訴我們，因為 <span class="math inline">\mu</span> 和 <span class="math inline">\sigma</span> 是漸進獨立的，我們可以用簡單的誤差傳播公式，把上述兩個變異數合併，快速算出 P95 的信賴區間。</p></li>
+<li><p>這在沒有電腦跑 MCMC 的年代（或是你在現場只有計算機時），是評估「最壞情況」是否超標的強大工具。</p></li>
+</ul>
+<hr>
+</div>
+<div id="tabset-1-7" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-7-tab">
+<ul>
+<li>這教會我們三件事：</li>
+</ul>
+<ol type="1">
+<li><p><strong>轉換參數：</strong> 用 <span class="math inline">\log \sigma</span> 讓近似更準確。</p></li>
+<li><p><strong>獨立性：</strong> 數據夠多時，平均值和變異數的估計互不干擾。</p></li>
+<li><p><strong>公式簡單：</strong> 只要知道樣本數 <span class="math inline">n</span> 和樣本標準差 <span class="math inline">s</span>，你就能立刻算出你對「製程變異程度」掌握了多少信心。</p></li>
+</ol>
+<p>這就是貝氏統計在大樣本下展現的優雅：<strong>它證明了傳統統計學的直覺在數據充足時是正確的。</strong></p>
+</div>
+</div>
+</div>
+<hr>
+</section>
+<section id="大樣本理論-large-sample-theory" class="level2">
+<h2 class="anchored" data-anchor-id="大樣本理論-large-sample-theory">4.2 大樣本理論 (Large-sample theory)</h2>
+<ul>
+<li>只要數據夠多，貝氏估計就一定會找到真相。</li>
+</ul>
+<div class="tabset-margin-container"></div><div class="panel-tabset border">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true" href="">1. 樣本數重要？</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false" href="">2. 一致性 (Consistency)</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-3" role="tab" aria-controls="tabset-2-3" aria-selected="false" href="">3. 漸近常態性 (Asymptotic Normality)</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-4" role="tab" aria-controls="tabset-2-4" aria-selected="false" href="">4. 我們離「大樣本」有多遠？</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-5-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-5" role="tab" aria-controls="tabset-2-5" aria-selected="false" href="">5. 小結</a></li></ul>
+<div class="tab-content border">
+<div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
+<ul>
+<li><p>我們常被質疑：『貝氏統計都要設一個先驗（Prior），那結果不就是主觀的嗎？</p></li>
+<li><p><strong>一致性 (Consistency)：</strong> 只要樣本夠多，不管你先驗怎麼設（只要不是太離譜），我們最終都會收斂到<strong>唯一的、真實的</strong>那個暴露值。</p></li>
+<li><p><strong>漸近常態性 (Asymptotic Normality)：</strong> 當樣本夠多時，事後分佈一定會變成<strong>常態分佈</strong>，而且其寬度（不確定性）完全由數據本身決定。」</p></li>
+</ul>
+<hr>
+</div>
+<div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
+<ul>
+<li><p>如果真實的參數值是 <span class="math inline">\theta_0</span>（例如某工廠真實的苯暴露平均濃度是 5 ppm），隨著樣本數 <span class="math inline">n \to \infty</span>，事後分佈的機率質量會全部集中在 <span class="math inline">\theta_0</span> 這一點的一個極小鄰域內。</p></li>
+<li><p><strong>OHS實務應用：</strong></p>
+<ul>
+<li><p><strong>情境：</strong> 假設有一個工廠，雖然我們還沒去測，但你主觀覺得它很安全（先驗設很低）。</p></li>
+<li><p><strong>發生什麼事：</strong> 隨著我們開始進場做暴露評估，採集了 10 個、50 個、100 個樣本，如果真實情況其實很危險，數據的力量會把你原本「安全」的信念推翻。</p></li>
+<li><p><strong>結論：</strong> 貝氏方法具有「自我修正」的能力。只要持續監測，錯誤的先驗終究會被大量的數據導正。這就是科學的客觀性。</p></li>
+</ul></li>
+</ul>
+<hr>
+</div>
+<div id="tabset-2-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-3-tab">
+<ul>
+<li><p>這部分證明了為什麼事後分佈會變成鐘形曲線。</p></li>
+<li><p>當樣本無限大時，我們的事後分佈 <span class="math inline">p(\theta|y)</span> 與一個以真實值 <span class="math inline">\theta_0</span> 為中心的常態分佈之間的「距離」會趨近於零。</p></li>
+<li><p>關鍵數學核心：Fisher Information (<strong>費雪資訊量</strong>)</p>
+<ul>
+<li><span class="math inline">J(\theta) = E \left[ \left( \frac{d}{d\theta} \log p(y|\theta) \right)^2 \right]</span></li>
+</ul></li>
+<li><p>這是衡量「一個樣本能提供多少關於未知參數的情報」的指標。</p></li>
+<li><p><strong>OHS：</strong></p>
+<ul>
+<li><p>有些監測方法很粗糙（比如目視判斷粉塵濃度），其 Fisher Information 很低，你可能需要幾千次觀察才能確定濃度。</p></li>
+<li><p>有些監測方法很精密（比如直讀式儀器加上實驗室分析），其 Fisher Information 很高，每一個數據都能大幅縮減不確定性。</p></li>
+<li><p>大樣本理論告訴我們：均值<strong>事後分佈的標準差（不確定性），大約等於</strong> <span class="math inline">1/\sqrt{n J(\theta)}</span>。 樣本數 <span class="math inline">n</span> 越大，或者單一樣本資訊量 <span class="math inline">J</span> 越大，我們對暴露評估的信心就越精確。</p></li>
+</ul></li>
+</ul>
+<hr>
+</div>
+<div id="tabset-2-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-4-tab">
+<ul>
+<li>大樣本假設 <span class="math inline">n \to \infty</span>，但現實中我們只有 <span class="math inline">n=6</span>。這有什麼意義？</li>
+</ul>
+<ol type="1">
+<li><p>收斂速度 (Rate of Convergence)：</p>
+<ul>
+<li><p>理論證明收斂速度是 <span class="math inline">1/\sqrt{n}</span>。這意味著，要讓信賴區間（不確定性）縮小一半，你需要增加 4 倍 的樣本量。</p></li>
+<li><p>當老闆問：「為什麼我們測了 10 個樣本覺得不夠，你要我測 40 個？」你可以用這理論回答：「老闆，因為數學告訴我們，精確度是用樣本數的平方根在提升的，這是數學鐵律。」</p></li>
+</ul></li>
+<li><p>先驗的影響力邊界</p>
+<ul>
+<li><p>理論說樣本無限大時先驗不重要。反過來說，樣本有限時，先驗很重要。</p></li>
+<li><p>這正好證實了在職業衛生小樣本評估（SEG 只有 3-5 人）中，為什麼我們需要使用 「知情先驗 (Informative Prior)」（例如引用同業數據、Expostats 的演算法）。因為我們還沒達到「大樣本境界」，所以我們必須依賴專業判斷來彌補數據的不足。</p></li>
+</ul></li>
+</ol>
+<hr>
+</div>
+<div id="tabset-2-5" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-5-tab">
+<section id="ohs人員最關心的採樣策略與樣本數規劃問題適當思維如下" class="level4">
+<h4 class="anchored" data-anchor-id="ohs人員最關心的採樣策略與樣本數規劃問題適當思維如下">OHS人員最關心的「採樣策略」與「樣本數規劃」問題，適當思維如下：</h4>
+<ol type="1">
+<li><p><strong>信心的來源：</strong> 數學證明了，<strong>只要持續收集數據</strong>，貝氏分析一定會給出正確的暴露評估結果（一致性）。</p></li>
+<li><p><strong>常態的必然：</strong> 大數據下，風險分佈趨向常態是必然的。這讓我們在<strong>處理海量數據（如大數據監測</strong>）時，可以用簡單的統計模型來篩選高風險群。</p></li>
+<li><p><strong>實務的警惕：</strong> 雖然理論保證了最終的勝利，但在還沒到達「大樣本」的途中（也就是我們日常工作的狀態），我們必須謹慎選擇先驗，因為這時候數據還不夠強大到能完全主導結果。</p></li>
+</ol>
+</section>
+</div>
+</div>
+</div>
+<hr>
+</section>
+<section id="定理的反例" class="level2">
+<h2 class="anchored" data-anchor-id="定理的反例">4.3 定理的反例</h2>
+<p>(Counterexamples to the theorems)</p>
+<ul>
+<li><p>如果你模型設錯了，數據再多也會帶你往懸崖衝。</p></li>
+<li><p>在某些特定的結構下，<strong>更多的數據並不會導致正確的結論</strong>，甚至會收斂到錯誤的值。這對於我們設計採樣策略（Sampling Strategy）至關重要。</p></li>
+</ul>
+<div class="tabset-margin-container"></div><div class="panel-tabset border">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-3-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-1" role="tab" aria-controls="tabset-3-1" aria-selected="true" href="">1. 識別性不足的模型</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-2" role="tab" aria-controls="tabset-3-2" aria-selected="false" href="">2. 參數隨樣本數增加</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-3" role="tab" aria-controls="tabset-3-3" aria-selected="false" href="">3. 混疊 (Aliasing)</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-4" role="tab" aria-controls="tabset-3-4" aria-selected="false" href="">4. 真實值在邊界上</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-5-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-5" role="tab" aria-controls="tabset-3-5" aria-selected="false" href="">5. 尾部風險</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-6-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-6" role="tab" aria-controls="tabset-3-6" aria-selected="false" href="">小結</a></li></ul>
+<div class="tab-content border">
+<div id="tabset-3-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-3-1-tab">
+<p>(Underidentified models)</p>
+<ul>
+<li><p>如果模型中的參數無法被數據唯一確定，似然函數（Likelihood）不會形成一個尖峰，而是形成一個「平坦的山脊」。這時，無論數據多少，事後分佈都不會收斂到一個點，而是由先驗分佈（Prior）決定結果。</p></li>
+<li><p>想像你在解方程式 <span class="math inline">A + B = 10</span>。只有這一個數據，<span class="math inline">A</span> 可以是 1，<span class="math inline">B</span> 是 9；<span class="math inline">A</span> 也可以是 5，<span class="math inline">B</span> 是 5。你永遠不知道 <span class="math inline">A</span> 和 <span class="math inline">B</span> 到底是多少。</p></li>
+<li><p>OHS實務：</p>
+<ul>
+<li><p>生物偵測（Biomonitoring）中的混淆來源。假設你在測量尿液中的代謝物濃度（<span class="math inline">Y</span>），這個濃度來自兩個源頭：</p>
+<ul>
+<li><p><strong>工廠暴露（</strong><span class="math inline">\theta_{job}</span>）</p></li>
+<li><p><strong>生活背景，如抽菸或飲食（</strong><span class="math inline">\theta_{home}</span>）</p>
+<ul>
+<li>模型：<span class="math inline">Y \sim N(\theta_{job} + \theta_{home}, \sigma^2)</span></li>
+</ul></li>
+<li><p>如果你只收集工人的尿液數據（<span class="math inline">Y</span>），卻沒有去調查他們回家的生活習慣（沒有獨立測量 <span class="math inline">\theta_{home}</span>），那麼無論你測了 1,000 個工人的尿液，你永遠無法區分「這家工廠很髒（<span class="math inline">\theta_{job}</span> 高）」<strong>還是</strong>「這群工人很愛吃燒烤（<span class="math inline">\theta_{home}</span> 高）」。</p></li>
+</ul></li>
+<li><p>在這種情況下，貝氏分析的結果完全取決於你一開始「猜」背景濃度是多少（先驗）。如果你猜錯了，結果就全錯。這提醒我們：<strong>如果沒有區分源頭的數據，不要妄想靠統計軟體拆解風險。</strong></p></li>
+</ul></li>
+</ul>
+<hr>
+</div>
+<div id="tabset-3-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-2-tab">
+<p>(Number of parameters increasing with sample size)</p>
+<ul>
+<li><p>當數據量 <span class="math inline">n</span> 增加時，如果未知參數的數量也跟著 <span class="math inline">n</span> 等比例增加，最大概似估計（MLE）和貝氏估計可能會失效（不一致性）。</p></li>
+<li><p>通常我們認為數據越多，參數估計越準。但如果每多一個數據，就多一個未知數要解，你的資訊量其實並沒有累積，反而被稀釋了。</p></li>
+<li><p>OHS實務：</p>
+<ul>
+<li><p>個別勞工暴露評估 vs.&nbsp;相似暴露群 (SEG)。</p></li>
+<li><p>假設你有 100 個工人，你給每個人都測了 2 次暴露濃度（<span class="math inline">n=200</span>）。你想知道這個製程整體的變異程度（<span class="math inline">\sigma^2</span>）。</p>
+<ul>
+<li><p><strong>錯誤模型：</strong> 你把每個工人的平均暴露（<span class="math inline">\mu_i</span>）都當作一個獨立的、不相關的參數。</p></li>
+<li><p>隨著工人數量增加，你需要估計的 <span class="math inline">\mu_i</span> 也越來越多（100 個工人就有 100 個 <span class="math inline">\mu</span>）。</p></li>
+<li><p><strong>後果：</strong> 數學證明，在這種情況下估計出來的變異數 <span class="math inline">\sigma^2</span> 會<strong>嚴重偏差</strong>（通常是低估的一半或偏差），而且永遠不會修正回來。</p></li>
+</ul></li>
+<li><p>這就是為什麼現代職業衛生統計（如 Expostats, BDA3 第 5 章）都要用 <strong>「階層模型 (Hierarchical Models/Random Effects)」</strong>。我們必須假設這些工人的 <span class="math inline">\mu_i</span> 來自同一個母群體（Population Distribution），這樣才能在大樣本下得到正確的變異數估計。千萬不要把每個工人都當作完全獨立的個體來硬算。</p></li>
+</ul></li>
+</ul>
+<hr>
+</div>
+<div id="tabset-3-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-3-tab">
+<ul>
+<li><p>當似然函數有對稱性時（例如兩個參數互換，結果一樣），事後分佈會出現多個峰值（Multimodal）。這時「正態近似」完全失敗，因為正態分佈只有一個峰。</p></li>
+<li><p>ＯＨＳ實務：</p>
+<ul>
+<li><p>混合暴露群體（Mixture Models）。假設你的一個 SEG (相似暴露群) 其實分成了兩派：一半的人有戴防護具（低暴露），一半的人沒戴（高暴露），但你記錄數據時忘記標記誰是誰了。</p></li>
+<li><p>當你用貝氏模型去跑「雙峰分佈」時，模型會告訴你：「有一群平均是 10 ppm，另一群是 100 ppm」。但是模型分不清楚 <strong>「群組 A 是 10」</strong> 還是 <strong>「群組 B 是 10」</strong>（標籤置換問題）。</p></li>
+</ul></li>
+<li><p>這時事後分佈長得像駝峰，如果你硬要用 4.1 節的「常態近似」去算一個總平均值，你會得到一個位於 55 ppm 的平均值，但實際上工廠裡根本沒有人暴露在 55 ppm（大家都在 10 或 100）。<strong>平均值在這種情況下毫無意義，甚至會誤導職災預防策略。</strong></p></li>
+</ul>
+<hr>
+</div>
+<div id="tabset-3-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-4-tab">
+<p>(True value on the boundary)</p>
+<ul>
+<li><p>如果真實參數位於參數空間的邊緣（例如 <span class="math inline">\theta=0</span> 且限制 <span class="math inline">\theta \ge 0</span>），正態近似會失效，因為正態分佈是對稱的，會延伸到邊界之外。</p></li>
+<li><p>OHS實務：</p>
+<ul>
+<li><p>零暴露或完全合規 (Zero Exposure)。有些化學物質在製程中是完全密封的，真實洩漏率可能是 0</p></li>
+<li><p>當我們採樣時，可能測到幾個 “Non-detect” (ND)。如果我們試圖估計平均濃度 <span class="math inline">\mu</span>：</p>
+<ul>
+<li><p>真實 <span class="math inline">\mu = 0</span>。</p></li>
+<li><p>但正態近似會試圖畫一個鐘形曲線包住 0。這意味著它會預測有 50% 的機率濃度是負的（這在物理上不可能），或者它會被迫截斷，導致對 95% 上限（UCL）的估計完全錯誤。</p></li>
+</ul></li>
+<li><p>處理極低濃度或大量 ND 的數據時，4.1 的常態近似公式不能用。必須使用專門處理截斷數據（Censored Data）的模型（如 Tobit model 或 BDA3 中的插補法），否則你會算出荒謬的「負濃度」安全區間。</p></li>
+</ul></li>
+</ul>
+<hr>
+</div>
+<div id="tabset-3-5" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-5-tab">
+<p>(Tails of the distribution)</p>
+<ul>
+<li><p>即便樣本數很大，正態近似通常在分佈的中心（平均值附近）很準，但在尾巴（極端值） 部分往往不準。</p></li>
+<li><p>OHS實務：</p>
+<ul>
+<li><p>這是職安衛最痛的點：P95 (95th Percentile)。我們做暴露評估，最關心的不是「平均每個人吸多少」，而是「最倒楣的那個人吸多少」（P95）。</p></li>
+<li><p>BDA3 在這裡警告我們：雖然大樣本理論保證了平均值的估計是常態的，但它並沒有保證極端值（尾部機率） 的估計也是準的。</p></li>
+<li><p>如果真實的暴露分佈是 <strong>「厚尾的 (Heavy-tailed)」</strong>（例如偶爾會有一次大洩漏，發生率低但濃度極高），標準的正態近似會嚴重低估這種極端事件發生的機率。</p></li>
+</ul></li>
+<li><p>千萬別只看平均值的信賴區間就覺得天下太平。對於高風險化學品，我們必須檢查數據<strong>是否有厚尾特性（Outliers）</strong>，並考慮使用 t-分佈或其他更穩健的模型，而不是盲目相信常態假設。</p></li>
+</ul>
+<hr>
+</div>
+<div id="tabset-3-6" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-6-tab">
+<ul>
+<li><p>「統計學的大樣本理論像是『自動駕駛』，在平直的公路上（標準模型）它可以開得很好。</p></li>
+<li><p>但本節某些情況—數據來源混雜、參數太多、真實值是零、或是關注極端風險—就像是險峻的山路。</p></li>
+<li><p>在這些情況下，自動駕駛（常態近似）會失靈。身為專業人員，你必須手動介入（使用更精細的階層模型、截斷模型），否則就會翻車。」</p></li>
+</ul>
+</div>
+</div>
+</div>
+<hr>
+</section>
+<section id="貝氏推論的頻率學派評估" class="level2">
+<h2 class="anchored" data-anchor-id="貝氏推論的頻率學派評估">4.4 貝氏推論的頻率學派評估</h2>
+<p>Frequency evaluations of Bayesian inferences</p>
+<ul>
+<li><p>職業安全衛生（OSH）法規與傳統訓練，大都是建立在「頻率學派（Frequentist）」的基礎上（例如：t 檢定、95% 信賴區間）。當你開始推廣貝氏統計時，最常被傳統派挑戰的問題就是：</p>
+<ul>
+<li><strong>「你算出來的那個貝氏區間，真的能代表 95% 的信心嗎？還是只是你自己主觀覺得有 95%？」</strong></li>
+</ul></li>
+<li><p>這一節就在教我們：<strong>如何用傳統統計的標準（頻率特性），來檢驗貝氏模型的品質。</strong></p></li>
+</ul>
+<div class="tabset-margin-container"></div><div class="panel-tabset border">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-4-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-1" role="tab" aria-controls="tabset-4-1" aria-selected="true" href="">1. 核心觀念</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-4-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-2" role="tab" aria-controls="tabset-4-2" aria-selected="false" href="">2. 關鍵指標一：區間覆蓋率</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-4-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-3" role="tab" aria-controls="tabset-4-3" aria-selected="false" href="">3. 關鍵指標二：點估計的偏差與變異</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-4-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-4" role="tab" aria-controls="tabset-4-4" aria-selected="false" href="">4. 如何進行評估？</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-4-5-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-5" role="tab" aria-controls="tabset-4-5" aria-selected="false" href="">5. 小結</a></li></ul>
+<div class="tab-content border">
+<div id="tabset-4-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-4-1-tab">
+<ul>
+<li><p>雖然貝氏推論是基於「給定數據下的參數機率（Posterior）」，但我們仍然可以問：如果我們重複使用這個貝氏方法處理很多組不同的數據，它的長期表現如何？這就是頻率評估（Frequency evaluation）。</p></li>
+<li><p>我們可以用頻率學派的指標（如<strong>覆蓋率 Coverage</strong>、<strong>偏差 Bias</strong>）來確保我們的貝氏模型不是在「亂猜」，而是具有客觀的可靠性。</p></li>
+</ul>
+<hr>
+</div>
+<div id="tabset-4-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-4-2-tab">
+<p>(Coverage of Posterior Intervals)</p>
+<ul>
+<li><p>定義：一個 <span class="math inline">100(1-\alpha)\%</span> 的貝氏區間，其頻率覆蓋率是指在多次重複實驗中，該區間包含真實參數值 <span class="math inline">\theta</span> 的比例。</p></li>
+<li><p>OHS實務：</p>
+<ul>
+<li><p>假設你用 Expostats（貝氏軟體）計算某個相似暴露群（SEG）的 P95（第 95 百分位數）是否超標。軟體給你一個「95% 貝氏可信區間 (Credible Interval)」。</p>
+<ul>
+<li><p><strong>理想狀態（校準良好）：</strong> 如果你對 100 個不同的 SEG 做分析，這 100 個算出來的區間，應該大約有 95 個會把「真實的 P95」包在裡面。這代表你的先驗分佈（Prior）設得很好，模型很準。</p></li>
+<li><p><strong>校準不良（Overconfident）：</strong> 如果 100 次裡面，只有 50 次包住真值，代表你的模型「過度自信」（區間太窄了）。這在職安上很危險，因為你會誤以為風險很低，實際上可能已經超標。</p></li>
+<li><p><strong>校準不良（Conservative）：</strong> 如果 100 次裡面，有 99 次都包住真值，代表你的區間「太寬、太保守」。雖然安全，但可能導致企業花冤枉錢做不必要的改善。</p></li>
+</ul></li>
+<li><p>好的貝氏模型，其「主觀信心」應該要等於「客觀頻率」。這就是<strong>校準 (Calibration)</strong> 的概念。</p></li>
+</ul></li>
+</ul>
+<hr>
+</div>
+<div id="tabset-4-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-4-3-tab">
+<p>(Bias and Variance of Point Estimates)</p>
+<ul>
+<li><p>在小樣本下，貝氏統計比傳統統計好用。</p></li>
+<li><p><strong><em>傳統統計追求「不偏估計 (Unbiased Estimator)」，即長期的平均值要等於真值。但貝氏估計（通常是後驗平均值或中位數）往往是「有偏的 (Biased)」，因為它會受到先驗（Prior）的拉扯。</em></strong></p></li>
+<li><p>OHS實務（小樣本救星）：</p>
+<ul>
+<li><p>「偏差」不一定是壞事。</p>
+<ul>
+<li><p><strong>情境：</strong> 只有 3 個樣本 (<span class="math inline">n=3</span>)，數值為 10, 12, 100 (極端值)。</p></li>
+<li><p><strong>傳統方法 (MLE)：</strong> 平均值會被那個 100 拉得非常高。雖然數學上這是「不偏」的，但單次估計的誤差（Variance）極大，結果很不穩定。</p></li>
+<li><p><strong>貝氏方法 (With Prior)：</strong> 如果我們有一個合理的先驗（例如：根據過去經驗，濃度不太可能超過 50），貝氏估計會把那個 100 稍微往回拉（Shrinkage effect）。</p></li>
+<li><p><strong>結果：</strong> 雖然貝氏估計「偏」了一點（Bias），但它大幅降低了變異（Variance）。<strong>總體誤差（MSE = Bias² + Variance）反而比傳統方法更小！</strong></p></li>
+</ul></li>
+</ul></li>
+<li><p>「在職業衛生常見的小樣本數據中，我們寧願要一個『稍微有點偏差但很穩定』的貝氏估計，也不要一個『理論上不偏但忽大忽小』的傳統估計。」</p></li>
+</ul>
+<hr>
+</div>
+<div id="tabset-4-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-4-4-tab">
+<section id="模擬實驗-simulation-studies" class="level4">
+<h4 class="anchored" data-anchor-id="模擬實驗-simulation-studies">模擬實驗 (Simulation studies)</h4>
+<ul>
+<li><p>既然真值 <span class="math inline">\theta</span> 通常是未知的，我們怎麼知道覆蓋率好不好？答案是：<strong>模擬 (Simulation)</strong>。</p></li>
+<li><p>實務操作：</p>
+<ul>
+<li><p>這就是驗證任何暴露評估工具（如 IHSTAT, Expostats）的標準流程。</p>
+<ol type="1">
+<li><p><strong>創造虛擬世界：</strong> 用電腦生成 1,000 組假數據，假設我們知道真實的幾何平均數 (GM) 是 5 ppm。</p></li>
+<li><p><strong>套用模型：</strong> 把這 1,000 組數據丟進你的貝氏模型去算。</p></li>
+<li><p><strong>檢查答案：</strong> 看看算出來的 1,000 個區間，有多少個真的包含了 5 ppm？</p></li>
+<li><p><strong>結論：</strong> 如果包含率接近 95%，你就可以大聲跟老闆或勞檢員說：「我的這個貝氏模型經過頻率學派驗證，是準確可靠的！」</p></li>
+</ol></li>
+</ul></li>
+</ul>
+<hr>
+</section>
+</div>
+<div id="tabset-4-5" class="tab-pane" role="tabpanel" aria-labelledby="tabset-4-5-tab">
+<ol type="1">
+<li><p><strong>貝氏與頻率不衝突：</strong> 我們用貝氏方法「產生」解答，但可以用頻率學派的方法來「檢查」解答的品質。</p></li>
+<li><p><strong>95% 的承諾：</strong> 一個好的貝氏分析，它的「95% 可信區間」在長期使用下，應該要有 95% 的機會抓到真值。這叫「校準」。</p></li>
+<li><p><strong>小樣本優勢：</strong> 透過引入先驗資訊（Prior），貝氏估計能在小樣本情況下，犧牲一點點準確度（Bias），換取大幅度的穩定性（Lower Variance）。這對只有 3-6 個樣本的暴露評估至關重要。</p></li>
+</ol>
+</div>
+</div>
+</div>
+<hr>
+</section>
+<section id="其他統計方法的貝氏詮釋" class="level2">
+<h2 class="anchored" data-anchor-id="其他統計方法的貝氏詮釋">4.5 <strong>其他統計方法的貝氏詮釋</strong></h2>
+<p><strong>Bayesian interpretations of other statistical methods</strong></p>
+<ul>
+<li>許多傳統（頻率學派）的統計方法，其實可以被視為貝氏分析的「特例」或「近似」。</li>
+</ul>
+<div class="tabset-margin-container"></div><div class="panel-tabset border">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-5-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-1" role="tab" aria-controls="tabset-5-1" aria-selected="true" href="">1. 最大概似估計</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-5-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-2" role="tab" aria-controls="tabset-5-2" aria-selected="false" href="">2. 不偏估計量</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-5-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-3" role="tab" aria-controls="tabset-5-3" aria-selected="false" href="">3. 信賴區間</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-5-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-4" role="tab" aria-controls="tabset-5-4" aria-selected="false" href="">4. 排列檢定與隨機化檢定</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-5-5-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-5" role="tab" aria-controls="tabset-5-5" aria-selected="false" href="">5. 交叉驗證</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-5-6-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-6" role="tab" aria-controls="tabset-5-6" aria-selected="false" href="">小結</a></li></ul>
+<div class="tab-content border">
+<div id="tabset-5-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-5-1-tab">
+<p>(Maximum Likelihood Estimates, MLE)</p>
+<ul>
+<li><p>傳統統計中最常用的點估計方法是 MLE（找出讓數據出現機率最大的參數值）。 從貝氏觀點來看，<strong>MLE 等同於「均勻先驗 (Uniform Prior)」下的「後驗眾數 (Posterior Mode)」</strong>。</p></li>
+<li><p><strong>OHS實務：</strong></p>
+<ul>
+<li><p><strong>情境：</strong> 你用軟體算出一組噪音數據的平均數 (GM) 是 85 dBA。這個數字通常就是 MLE。</p></li>
+<li><p><strong>貝氏詮釋：</strong> 這代表你假設這家工廠的噪音「可能是 0 到無限大之間的任何值，且機率都一樣平等」（這就是均勻先驗）。</p></li>
+<li><p>「當你在用 MLE 時，你其實已經是在做貝氏分析了，只是你默認了一個『我對這工廠一無所知』的先驗條件。但如果你明明知道這是一台剛保養好的新機器，卻還裝作一無所知，這就是 MLE 的弱點——它浪費了你的專業知識。」</p></li>
+</ul></li>
+</ul>
+<hr>
+</div>
+<div id="tabset-5-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-5-2-tab">
+<p>(Unbiased Estimates)</p>
+<ul>
+<li><p>頻率學派非常強調「不偏性 (Unbiasedness)」，即在無限次抽樣中，估計值的平均要等於真值。 從貝氏觀點來看，<strong>不偏估計量通常近似於「後驗平均值 (Posterior Mean)」</strong>（特別是在大樣本或平坦先驗下）。</p></li>
+<li><p><strong>OHS實務：</strong></p>
+<ul>
+<li><p><strong>情境：</strong> 我們要評估勞工的長期平均暴露濃度 (Long-term Average)，以預防慢性病。</p></li>
+<li><p><strong>衝突點：</strong> 頻率學派會為了追求「不偏」，有時會算出很奇怪的數字（例如變異數很大）。但貝氏學派不在乎「無限多次重複採樣的平均有沒有對準」，貝氏在乎的是「針對這一次採樣，誤差越小越好」。</p>
+<ul>
+<li><p><strong>不偏估計（頻率派）：</strong> 像是一個散彈槍射手，雖然子彈散得很開，但所有彈孔的中心點正中紅心。</p></li>
+<li><p><strong>貝氏估計：</strong> 像是一個狙擊手，雖然瞄準點稍微偏了一點點（因為受先驗影響，這叫偏差 Bias），但所有子彈都打在非常集中的一個小點上（低變異 Variance）。</p></li>
+</ul></li>
+<li><p>在職業衛生樣本很少（n=3~5）的情況下，我們寧願要貝氏的「穩定」，也不要頻率派的「不偏但亂跳」。</p></li>
+</ul></li>
+</ul>
+<hr>
+</div>
+<div id="tabset-5-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-5-3-tab">
+<p>(Confidence Intervals)</p>
+<ul>
+<li><p>傳統的 95% 信賴區間，其定義非常饒口：「如果重複做 100 次實驗，有 95 個區間會包住真值」。 但在數據量足夠且使用非資訊先驗時，<strong>95% 信賴區間的數值，幾乎等同於 95% 貝氏可信區間 (Credible Interval)。</strong></p></li>
+<li><p><strong>OHS實務：</strong></p>
+<ul>
+<li><p>當職安人員算出「95% 上限 (UCL) 是 10 ppm」時，他們心裡通常想的是：「有 95% 的機率，真實濃度小於 10 ppm」。</p></li>
+<li><p>傳統統計學家會跳出來說：「錯！真值只有一個，機率不是 1 就是 0，不能這樣解釋！」</p></li>
+<li><p><strong>貝氏的救贖：</strong> 4.5 節告訴我們，只要沒有強烈的先驗衝突，<strong>你可以大膽地用貝氏的方式去解釋傳統的信賴區間。</strong></p></li>
+<li><p>以前那種『直覺』的機率解釋法，在貝氏理論下終於合法化了。傳統信賴區間其實就是貝氏區間的一種特例。所以，盡管放心地說『我有 95% 的信心』吧！」</p></li>
+</ul></li>
+</ul>
+<hr>
+</div>
+<div id="tabset-5-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-5-4-tab">
+<p>(Permutation and Randomization Tests)</p>
+<ul>
+<li><p>這是無母數統計常用的方法，透過重新洗牌數據來檢定顯著性。 貝氏詮釋認為，這與「可交換性 (Exchangeability)」的概念密切相關。如果我們認為數據的順序不影響結果（即數據是可交換的），那麼這種檢定結果通常會與貝氏結果一致。</p></li>
+<li><p><strong>ＯＨＳ實務：</strong></p>
+<ul>
+<li><p><strong>情境：</strong> 比較「早班」與「晚班」工人的暴露是否有差異，但數據分佈很奇怪（不是常態）。</p></li>
+<li><p><strong>貝氏觀點：</strong> 如果你的先驗認為「早班和晚班在本質上是一樣的」（Null Hypothesis），那麼隨機重新分配數據後的結果，就是你對差異程度的後驗分佈。</p></li>
+</ul></li>
+<li><p>請參考後面的範例</p></li>
+</ul>
+<hr>
+</div>
+<div id="tabset-5-5" class="tab-pane" role="tabpanel" aria-labelledby="tabset-5-5-tab">
+<p>(Cross-validation)</p>
+<ul>
+<li><p>把數據分成兩半，一半建模型，一半測準確度。 貝氏觀點將其視為「預測分佈 (Predictive Distribution)」的一種評估方式。</p></li>
+<li><p><strong>ＯＨＳ實務：</strong></p>
+<ul>
+<li><p><strong>應用：</strong> 當我們建立了一個預測模型（例如：用化學品使用量推估空氣濃度），我們很怕模型「過度擬合 (Overfitting)」。</p></li>
+<li><p>貝氏方法非常強調「預測下一個數據點」的能力（Posterior Predictive Check）。交叉驗證其實就是在模擬這個過程。如果你算的 P95 連現有的數據都抓不住，那就別拿去預測未來了。</p></li>
+</ul></li>
+</ul>
+<hr>
+</div>
+<div id="tabset-5-6" class="tab-pane" role="tabpanel" aria-labelledby="tabset-5-6-tab">
+<ul>
+<li><p>貝氏統計並不是要推翻過去 30 年學的東西。</p></li>
+<li><p><strong>以前用的 MLE、信賴區間、不偏估計，其實都是貝氏統計在『沒意見（無資訊先驗）』或『大數據』下的特例。</strong></p></li>
+<li><p>學習貝氏統計，並不是要否定過去，而是要『擴充』你的工具箱。</p>
+<ul>
+<li><p>當你有大數據時，貝氏跟傳統方法結果一樣（殊途同歸）。</p></li>
+<li><p>但當你只有 3 個樣本，或者你有很強的專業判斷（強先驗）時，傳統方法會卡住，而貝氏方法能帶你突圍</p></li>
+</ul></li>
+<li><p>這就是為什麼我們要升級到貝氏統計的原因。」</p></li>
+</ul>
+</div>
+</div>
+</div>
+<hr>
+<section id="範例wilcoxon-rank-test-的貝氏詮釋" class="level3">
+<h3 class="anchored" data-anchor-id="範例wilcoxon-rank-test-的貝氏詮釋">4.6 範例：Wilcoxon Rank Test 的貝氏詮釋</h3>
+<div class="tabset-margin-container"></div><div class="panel-tabset border">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-6-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-6-1" role="tab" aria-controls="tabset-6-1" aria-selected="true" href="">1. 為什麼我們要用「排序（Rank）」？</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-6-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-6-2" role="tab" aria-controls="tabset-6-2" aria-selected="false" href="">2. 從「檢定」變成「機率」</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-6-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-6-3" role="tab" aria-controls="tabset-6-3" aria-selected="false" href="">3. 改善工程有沒有效？</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-6-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-6-4" role="tab" aria-controls="tabset-6-4" aria-selected="false" href="">4. OHS實務</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-6-5-tab" data-bs-toggle="tab" data-bs-target="#tabset-6-5" role="tab" aria-controls="tabset-6-5" aria-selected="false" href="">5. 小結</a></li></ul>
+<div class="tab-content border">
+<div id="tabset-6-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-6-1-tab">
+<ul>
+<li>在職業衛生暴露評估中，我們常遇到兩種狀況：</li>
+</ul>
+<ol type="1">
+<li><p><strong>分佈不是常態：</strong> 數據歪得很厲害，取了 Log 還是很怪。</p></li>
+<li><p><strong>未檢出 (Non-detects, ND)：</strong> 儀器測不到數值，只知道「小於 0.01 ppm」。</p></li>
+</ol>
+<ul>
+<li><p>這時候我們不能算平均值（因為 ND 是未知數），我們只能「排大小」。</p>
+<ul>
+<li><p>既然 ND 最小，就排第 1 名。</p></li>
+<li><p>0.05 ppm 排第 2 名。</p></li>
+<li><p>…依此類推。</p></li>
+</ul></li>
+<li><p><strong>Wilcoxon 檢定</strong>就是完全只看「排名」，不看具體數值的傳統方法。它用來回答：「SEG A的暴露是否比 SEG B 高？」</p></li>
+</ul>
+<hr>
+</div>
+<div id="tabset-6-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-6-2-tab">
+<ul>
+<li><p>傳統觀點（頻率學派）：</p>
+<ul>
+<li><p>計算一個統計量 <span class="math inline">U</span>（看 A 組贏了 B 組幾次），然後查表得到 p-value。如果 <span class="math inline">p &lt; 0.05</span>，就說「拒絕虛無假設」，判定兩組有顯著差異。</p>
+<ul>
+<li><em>缺點：</em> p-value 很難向老闆解釋。說「拒絕虛無假設」老闆聽不懂。</li>
+</ul></li>
+</ul></li>
+<li><p>貝氏觀點：</p>
+<ul>
+<li><p>Wilcoxon 檢定的統計量，對應到一個非常直觀的參數 <span class="math inline">\alpha</span>：</p>
+<ul>
+<li><span class="math inline">\alpha = \Pr(y_1 &gt; y_2)</span></li>
+</ul></li>
+<li><p>意思是：「如果你從第一組（改善前）隨機抽一個數據，再從第二組（改善後）隨機抽一個數據，前者大於後者的機率是多少？</p></li>
+<li><p>在標準的貝氏推導下（假設使用 Dirichlet process prior 等無母數先驗），<strong>Wilcoxon 統計量其實就是這個機率</strong> <span class="math inline">\alpha</span> 的最佳估計值。</p></li>
+</ul></li>
+</ul>
+<hr>
+</div>
+<div id="tabset-6-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-6-3-tab">
+<ul>
+<li><p>讓我們用一個通風改善工程的例子來說明這個轉換。</p></li>
+<li><p>情境：你有改善前（Old）與改善後（New）的兩組苯暴露數據，樣本數都很少（各 5 個），而且有些是 ND。</p>
+<ul>
+<li><p><strong>Old:</strong> 10, 12, 8, 20, 15 (ppm)</p></li>
+<li><p><strong>New:</strong> 2, 5, ND, 3, 8 (ppm)</p></li>
+</ul></li>
+<li><p>我們想知道：<strong>改善工程有效嗎？</strong></p></li>
+</ul>
+<ol type="1">
+<li><p>Step 1: 傳統 Wilcoxon 作法</p>
+<ul>
+<li><p>你會把它們混合排序，計算 <span class="math inline">U</span> 值。</p></li>
+<li><p>結果可能給你一個 p-value = 0.004。</p></li>
+<li><p><em>報告方式：</em> 「在顯著水準 0.05 下，改善前後有顯著差異。」</p></li>
+</ul></li>
+<li><p>Step 2: 貝氏詮釋 (4.5 節的精髓)</p>
+<ul>
+<li><p>不要只看 p-value，要看統計量背後的含義。</p></li>
+<li><p>我們可以計算兩組數據互相比較的「勝率」。</p>
+<ul>
+<li><p>Old 組有 5 個數據，New 組有 5 個數據，總共有 <span class="math inline">5 \times 5 = 25</span> 種配對組合。</p></li>
+<li><p>在這 25 種組合中，有多少次 <code>Old &gt; New</code>？</p></li>
+<li><p>(10 vs 2, 10 vs 5, … 一路比下來)</p></li>
+</ul></li>
+<li><p>假設經過計算，25 次裡面有 24 次舊的大於新的。</p>
+<ul>
+<li>比例 = <span class="math inline">24/25 = 0.96</span>。</li>
+</ul></li>
+</ul></li>
+<li><p>Step 3: 貝氏結論（給老闆的報告）</p></li>
+</ol>
+<ul>
+<li><p>這個 <span class="math inline">0.96</span> 就是後驗機率的估計。你可以這樣說：</p>
+<ul>
+<li>「經由貝氏分析評估，我們有 <strong>96% 的信心 (Probability)</strong> 認為，這套新通風系統的暴露濃度會低於舊系統。」</li>
+</ul></li>
+</ul>
+<hr>
+</div>
+<div id="tabset-6-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-6-4-tab">
+<ol type="1">
+<li><p>處理「未檢出 (ND)」的邏輯一致性</p>
+<ul>
+<li><p>傳統統計處理 ND 很頭痛（要補 1/2 LOD 還是 <span class="math inline">\sqrt{2}</span> LOD？）。但在這個秩檢定（Rank Test）的貝氏觀點下，ND 就是「肯定比有數值的低」。</p></li>
+<li><p><span class="math inline">\Pr(\text{Detected} &gt; \text{ND}) = 1</span>。</p></li>
+<li><p>這讓我們在處理含有很多 ND 的清潔製程數據時，依然能算出一個「改善機率」。</p></li>
+</ul></li>
+<li><p>溝通力</p>
+<ul>
+<li><p>職災預防的決策者通常不是統計學家。</p>
+<ul>
+<li><p>你說：「Wilcoxon 檢定 p 小於 0.05」 <span class="math inline">\rightarrow</span> 老闆無感。</p></li>
+<li><p>你說：「數據顯示，隨便挑一天，新製程比舊製程安全的機率是 <strong>96%</strong>」 <span class="math inline">\rightarrow</span> 老闆立刻聽懂。</p></li>
+</ul></li>
+</ul></li>
+</ol>
+<hr>
+</div>
+<div id="tabset-6-5" class="tab-pane" role="tabpanel" aria-labelledby="tabset-6-5-tab">
+<ul>
+<li><p>「這個範例揭示了貝氏統計的包容性。即使是你過去最常用的『無母數檢定』，在貝氏眼中也有它的物理意義。</p></li>
+<li><p>它不再只是一個用來『拒絕』什麼的冰冷檢定，而是一個用來計算 <strong>『A 比 B 風險更高的機率是多少』</strong> 的實用工具。這將統計學從『假設檢定』轉化為了『風險量化』，這正是我們職業衛生暴露評估的核心目標。」</p></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+</section>
+</section>
+
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>Copyright 2026, 何明信</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+<script src="site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>
